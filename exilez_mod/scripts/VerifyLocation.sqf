@@ -14,31 +14,42 @@ private ["_flags","_validLocation","_distance","_radius","_position","_ignorePla
 _ignorePlayer = false;
 
 _position = _this select 0;
-if (count _this == 2) then {
+if (count _this == 2) then
+{
 	_ignorePlayer = _this select 1;
 };
 
 _validLocation = true;
 
 // Check if empty
-if ((count _position) == 0) then {_validLocation = false};
-
-// Check for safezones
-if (_validLocation) then 
+if ((count _position) == 0) then
 {
-	if ((_position) call ExileClient_util_world_isInTraderZone) exitWith {_validLocation = false};
+	_validLocation = false
 };
 
 // Check for water
 if (_validLocation) then 
 {
-	if (surfaceIsWater _position) then {_validLocation = false;};
+	if (surfaceIsWater _position) then
+	{
+		_validLocation = false;
+	};
+};
+
+// Check for safezones
+if (_validLocation) then 
+{
+	if ((_position) call ExileClient_util_world_isInTraderZone) then
+	{
+		_validLocation = false
+	};
 };
 
 // Check for flags
 if (_validLocation) then 
 {
-	if (RemoveZfromTerritory) then {
+	if (RemoveZfromTerritory) then
+	{
 		_flags = _position nearObjects ["Exile_Construction_Flag_Static", MaxTerritoryRange];
 		{
 			_distance = (getPosATL _x) distance _position;

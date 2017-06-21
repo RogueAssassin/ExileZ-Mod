@@ -5,51 +5,52 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 */
 
 // Global Settings
-ZombieSide                   = WEST;             // zombie team side east, west and Civilian can be used
-Debug                        = true;             // debug messages.
-MinSpawnDistance             = 20;               // Closest distance from any player to spawn a zombie.
-MaxSpawnDistance             = 160;              // Max distance a zombie should spawn from a player.
-MaxDistance			         = 300;              // Max distance to players before delete.
-MaxTime                      = 30;               // Max time away from a player before delete.
-RemoveZfromTraders			= true;             // Will kill zombies when they get too close to a safezone. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
-RemoveZfromTerritory         = true;             // Will kill zombies when they get too close to a flag. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
-TriggerGroupScaling          = 0.25;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
-LightsOff                    = true;             // Kill all the light on map except the player lights.
-UseHarassingZombies          = true;             // Spawn harassing zombies around the player.
-HarassingZombieAtNightOnly   = false;             // Spawn harassing zombies at night only.
-UseHorde                     = true;             // Use the horde spawner             
-NightStartTime               = 18;               // Time at which it is night in hours
-NightEndTime                 = 6;                // Time at which it is no longer night in hours
+ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
+Debug							= true;             // debug messages.
+ExtendingLogging				= true;				// Slightly more information in logs.
+MinSpawnDistance				= 20;               // Closest distance from any player to spawn a zombie.
+MaxSpawnDistance				= 160;              // Max distance a zombie should spawn from a player.
+MaxDistance						= 300;              // Max distance to players before delete.
+MaxTime							= 30;               // Max time away from a player before delete.
+RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
+RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
+TriggerGroupScaling				= 0.25;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
+LightsOff						= true;             // Kill all the light on map except the player lights.
+UseHarassingZombies				= true;             // Spawn harassing zombies around the player.
+HarassingZombieAtNightOnly		= false;			// Spawn harassing zombies at night only.
+UseHorde						= true;             // Use the horde spawner             
+NightStartTime					= 18;               // Time at which it is night in hours
+NightEndTime					= 6;                // Time at which it is no longer night in hours
 
 // Explosive zombies          
-ExplosiveZombies             = true;             // randomly boobie trapped zombies exploding a few seconds after dying.
-ExplosiveZombiesRatio        = 2;                // percentage of explosive zombies
-ExplosiveZombieWarning       = "IT'S A TRAP !!!";// Message that will display a few seconds before the explosion of a zombie.
-ExplosionDelay               = 3;                // self-explanatory
-ExplosiveType                = "Grenade" ;       // "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
-ExplosiveRespect             = 100;              // Bonus respect for Exploding zombies
+ExplosiveZombies				= true;             // randomly boobie trapped zombies exploding a few seconds after dying.
+ExplosiveZombiesRatio			= 2;                // percentage of explosive zombies
+ExplosiveZombieWarning			= "IT'S A TRAP !!!";// Message that will display a few seconds before the explosion of a zombie.
+ExplosionDelay					= 3;                // self-explanatory
+ExplosiveType					= "Grenade" ;       // "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
+ExplosiveRespect				= 100;              // Bonus respect for Exploding zombies
 
 // Killing zombies settings
-EnableMoneyOnPlayer          = false;            // Money goes directly on killer
-EnableMoneyOnCorpse          = true;             // Money stays on corpse for looting
-ZombieMoney                  = 5;                // Money per zombie kill
-ZombieMaxMoney               = 15;               // Max Money per zombie kill-random amount put on corpses
+EnableMoneyOnPlayer				= false;            // Money goes directly on killer
+EnableMoneyOnCorpse				= true;             // Money stays on corpse for looting
+ZombieMoney						= 5;                // Money per zombie kill
+ZombieMaxMoney					= 15;               // Max Money per zombie kill-random amount put on corpses
 
-EnableStatKill				 = true;			 // Enable stat tracking for Kills DB entry
-EnableZombieStatKill         = false;			 // Enable stat tracking for ZedKills DB entry
+EnableStatKill					= true;				// Enable stat tracking for Kills DB entry
+EnableZombieStatKill			= false;			// Enable stat tracking for ZedKills DB entry
 
-EnableRankChange			 = false;			 // Enable Rank change
-EnableHumanityChange		 = false;			 // Enable GR8's Humanity change
-ExileZombieKillRankChange	 = 5;				 // Both Rank and Humanity are dependant on this config
+EnableRankChange				= false;			// Enable Rank change
+EnableHumanityChange			= false;			// Enable GR8's Humanity change
+ExileZombieKillRankChange		= 5;				// Both Rank and Humanity are dependant on this config
 
-EnableRespectOnKill          = true;             // Self Explanatory
-ZombieRespect                = 10;               // Respect per zombie kill
+EnableRespectOnKill				= true;				// Self Explanatory
+ZombieRespect					= 10;				// Respect per zombie kill
 
-RoadKillBonus                = 10;               // Bonus Respect if roadkill
-MinDistance                  = 50;               // Minimal distance for range bonus
-CqbDistance                  = 10;               // Minimal ditance for close quarter bonus
-CqbBonus                     = 40;               // Respect for close quarter bonus at 1 meter
-DistanceBonusDivider         = 10;               // Distance divided by that number = respect E.G. 300m / [20] = 15 Respect
+RoadKillBonus					= 10;				// Bonus Respect if roadkill
+MinDistance						= 50;				// Minimal distance for range bonus
+CqbDistance						= 10;				// Minimal ditance for close quarter bonus
+CqbBonus						= 40;				// Respect for close quarter bonus at 1 meter
+DistanceBonusDivider			= 10;				// Distance divided by that number = respect E.G. 300m / [20] = 15 Respect
 
 // Zombie settings : SET TO -1 TO DISABLE AND USE DEFAULT FROM RYANZOMBIES
 EZM_ryanzombieshealth			          = 0.8; 	 // Health, *(initial damage level 0 is no damage 1 is dead)

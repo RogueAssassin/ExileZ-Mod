@@ -97,5 +97,8 @@ while {triggeractivated (_this select 0)} do
 	};
 };
 //Reboot the trigger
-diag_log format["ExileZ Mod: Deactivating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation];
+if (Debug) then
+{
+	diag_log format["ExileZ Mod: Deactivating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation];
+};
 _this select 0 setvariable ["active", false, False];

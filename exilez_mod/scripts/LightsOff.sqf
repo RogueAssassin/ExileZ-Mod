@@ -27,7 +27,7 @@ foreach
 	"Land_PowerPoleWooden_L_F"
 ];
 
-if (ExtendingLogging) then
+if (ExtendedLogging) then
 {
 	diag_log "ExileZ Mod: Turning off the lights.. SPOOKY!!";
 };

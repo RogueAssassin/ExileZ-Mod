@@ -146,7 +146,7 @@ else
 	// Add to Zombie Monitor
 	EZM_aliveZombies pushback _zombie;
 	
-	if (ExtendingLogging) then
+	if (ExtendedLogging) then
 	{
 		diag_log "ExileZ Mod: Spawning 1 Zombie	and adding it to the Monitor";
 	};

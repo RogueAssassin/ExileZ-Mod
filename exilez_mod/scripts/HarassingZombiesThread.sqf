@@ -14,7 +14,7 @@ _zombieGroup =       (_this select 0) select 3;
 // Wait 2 minutes before starting Harassing Zombie Loop
 if (time < 120) exitWith 
 {
-    if (ExtendingLogging) then 
+    if (ExtendedLogging) then 
     {
         diag_log format["ExileZ Mod: Waiting until the server has been up at least 2 minutes (it has currently been up for %1 seconds)",time];
     };
@@ -54,7 +54,7 @@ if (time < 120) exitWith
 				if (_count < _groupSize) then 
 				{
 					nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
-					if (ExtendingLogging) then 
+					if (ExtendedLogging) then 
 					{
 						diag_log format["ExileZ Mod: Spawning 1 Harassing Zombie for %1.",_playerName];
 					};

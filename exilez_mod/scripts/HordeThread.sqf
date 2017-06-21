@@ -16,7 +16,7 @@ _hordeDensity =      (_this select 0) select 4;
 // Wait 2 minutes before starting Horde Loop
 if (time < 120) exitWith 
 {
-    if (ExtendingLogging) then 
+    if (ExtendedLogging) then 
     {
         diag_log format["ExileZ Mod: Waiting until the server has been up at least 2 minutes (it has currently been up for %1 seconds)",time];
     };
@@ -72,7 +72,7 @@ if (_nPlayer >= 1) then
 		};
 
 		//Spawn the horde
-		if (ExtendingLogging) then 
+		if (ExtendedLogging) then 
 		{
 			
 			diag_log format["ExileZ Mod: Spawning The Horde near %1.",_playerName];
@@ -85,7 +85,7 @@ if (_nPlayer >= 1) then
 	}
 	else
 	{
-		if (ExtendingLogging) then
+		if (ExtendedLogging) then
 		{
 			diag_log "ExileZ Mod: No valid player found for The Horde..";
 		};

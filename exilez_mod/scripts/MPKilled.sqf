@@ -43,7 +43,7 @@ if(ExplosiveZombies) then
 // Remove Zombie from Monitor
 EZM_aliveZombies = EZM_aliveZombies - [_unit];
 
-if (ExtendingLogging) then
+if (ExtendedLogging) then
 {
 	diag_log format["ExileZ Mod: Removing 1 Zombie	|	Killed by %1", name _killer];
 };

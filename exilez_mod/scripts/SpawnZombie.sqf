@@ -120,10 +120,10 @@ else
 	_tempGroup enableAttack false;
 	
 	_zombie = _tempGroup createUnit [_zClass, _position, [], 0, "NONE"]; 
-	_zombie disableAI 'FSM'; 
-	_zombie enableAI 'ANIM'; 
+	_zombie disableAI "FSM"; 
+	_zombie enableAI "ANIM"; 
 	_zombie disableConversation true; 
-	_zombie addMPEventHandler ['MPKilled', {_this call ZMPKilled;}]; 
+	_zombie addMPEventHandler ["MPKilled", {_this call ZMPKilled;}]; 
 	[_zombie] joinSilent _group;	
 	deleteGroup _tempGroup;
 	

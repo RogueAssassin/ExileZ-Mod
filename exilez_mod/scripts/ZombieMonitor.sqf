@@ -6,7 +6,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 private ["_device","_zombie","_zombiePos","_zombieClass","_distance","_radius","_flags"];
 
-if (Debug) then
+if (ExtendedLogging) then
 {
 	diag_log format["ExileZ Mod: Monitored Zombies	|	%1	", (count EZM_aliveZombies)];
 };

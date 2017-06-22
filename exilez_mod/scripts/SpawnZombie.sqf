@@ -128,11 +128,11 @@ else
 	deleteGroup _tempGroup;
 	
 	// Add Zombie Loot
-	if !(call _vestGroup=='') then
+	if !(call _vestGroup == "") then
 	{
 		_zombie addVest call _vestGroup;
 	
-		if !(call _lootGroup=='') then
+		if !(call _lootGroup == "") then
 		{
 			_zombie addItemToVest call _lootGroup;
 		};

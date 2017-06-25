@@ -27,7 +27,7 @@ ExplosiveZombies				= true;             // randomly boobie trapped zombies explo
 ExplosiveZombiesRatio			= 2;                // percentage of explosive zombies
 ExplosiveZombieWarning			= "IT'S A TRAP !!!";// Message that will display a few seconds before the explosion of a zombie.
 ExplosionDelay					= 3;                // self-explanatory
-ExplosiveType					= "Grenade" ;       // "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
+ExplosiveType					= "Grenade";       // "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
 ExplosiveRespect				= 100;              // Bonus respect for Exploding zombies
 
 // Killing zombies settings

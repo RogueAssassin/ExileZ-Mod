@@ -170,12 +170,18 @@ if ((!isNull _playerObj) && {((getPlayerUID _playerObj) != "") && {_playerObj is
 
 if(_explode) then 
 {
+	if ((getPosATL _unit) call ExileClient_util_world_isInTraderZone) then
 	{
-	if ((getPosATL _unit) call ExileClient_util_world_isInTraderZone) exitwith {_safetoblow = false};
+		_safetoblow = false
 	};
+	
 	if (_safetoblow) then 
 	{
-		sleep ExplosionDelay;
-		ExplosiveType createvehicle position _unit;
+		[_unit] spawn
+		{
+			private _unit = _this select 0;
+			sleep ExplosionDelay;
+			ExplosiveType createvehicle position _unit;
+		};
 	};
 };

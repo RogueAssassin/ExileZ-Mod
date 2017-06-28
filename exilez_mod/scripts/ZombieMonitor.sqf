@@ -20,6 +20,7 @@ if (ExtendedLogging) then
 	if((isNull _zombie) || (!(alive _zombie)))exitWith
 	{
 		
+		deleteVehicle _zombie;
 		EZM_aliveZombies = EZM_aliveZombies - [_zombie];
 		
 		if (ExtendedLogging) then

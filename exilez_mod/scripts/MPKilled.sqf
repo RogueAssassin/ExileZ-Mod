@@ -31,7 +31,7 @@ _maxMoneyOnZed			= ZombieMaxMoney;		//default = 15; // Max Money per zombie kill
 _killMsg = selectRandom ["ZOMBIE WACKED","ZOMBIE CLIPPED","ZOMBIE DISABLED","ZOMBIE DISQUALIFIED","ZOMBIE WIPED","ZOMBIE WIPED","ZOMBIE ERASED","ZOMBIE LYNCHED","ZOMBIE WRECKED","ZOMBIE NEUTRALIZED","ZOMBIE SNUFFED","ZOMBIE WASTED","ZOMBIE ZAPPED"];
 _killMsgRoad = selectRandom ["ZOMBIE ROADKILL","ZOMBIE SMASHED","ERMAHGERD ROADKILL"];
 
-if(ExplosiveZombies) then 
+if (ExplosiveZombies) then 
 {
 	if (ExplosiveZombiesRatio > random 100) then
 	{	

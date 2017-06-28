@@ -41,7 +41,7 @@ if(ExplosiveZombies) then
 };
 
 // Remove Zombie from Monitor
-EZM_aliveZombies = EZM_aliveZombies - [_unit];
+//EZM_aliveZombies = EZM_aliveZombies - [_unit];
 
 if (ExtendedLogging) then
 {

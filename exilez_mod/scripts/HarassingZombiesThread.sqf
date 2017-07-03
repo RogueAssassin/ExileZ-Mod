@@ -28,10 +28,26 @@ if (time < 120) exitWith
 	};
 	
 	// Not in Traders
-	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) exitWith {};
+	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) exitWith
+	{
+		if (ExtendedLogging) then 
+		{
+			_playerObj = _x;
+			_playerName = name _playerObj;
+			diag_log format["ExileZ Mod: %1 is in a SafeZone, no Harassing Zombie for them.",_playerName];
+		};
+	};
 	
 	// Not in SafeZone
-	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) exitWith {};
+	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) exitWith
+	{
+		if (ExtendedLogging) then 
+		{
+			_playerObj = _x;
+			_playerName = name _playerObj;
+			diag_log format["ExileZ Mod: %1 is in their Territory, no Harassing Zombie for them.",_playerName];
+		};
+	};
 	
 	// Roll for Harassing Zombie chance..
 	_chanceRoll = random (floor 99);

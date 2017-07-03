@@ -37,8 +37,9 @@ if (time < 120) exitWith
 			diag_log format["ExileZ Mod: %1 is in a SafeZone, no Harassing Zombie for them.",_playerName];
 		};
 	};
+	sleep 0.5;
 	
-	// Not in SafeZone
+	// Not in Territory
 	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) exitWith
 	{
 		if (ExtendedLogging) then 
@@ -48,6 +49,7 @@ if (time < 120) exitWith
 			diag_log format["ExileZ Mod: %1 is in their Territory, no Harassing Zombie for them.",_playerName];
 		};
 	};
+	sleep 0.5;
 	
 	// Roll for Harassing Zombie chance..
 	_chanceRoll = random (floor 99);
@@ -59,7 +61,8 @@ if (time < 120) exitWith
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 got lucky, no Harassing Zombie for them.",_playerName];
 		};
-	};	
+	};
+	sleep 0.5;
 
 	if ((HarassingZombieAtNightOnly && (daytime >= NightStartTime or daytime < NightEndTime)) || !(HarassingZombieAtNightOnly)) then 
 	{
@@ -95,6 +98,7 @@ if (time < 120) exitWith
 				};
 			};
 		};
-	};	
+	};
+	sleep 0.5;
 }
 forEach (allPlayers - entities "HeadlessClient_F");

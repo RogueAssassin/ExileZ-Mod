@@ -116,7 +116,7 @@ EZM_ryanzombiesmovementspeedcrawler       = 1;      // Animation speed for crawl
 
 // Harassing Zombies Config
 UseHarassingZombies						= true;		// Spawn harassing zombies around the player.
-HarassingZedChance						= 100;		// Chance per player for a harassing Zed to spawn on them
+HarassingZedChance						= 100;		// Percent chance per player for a harassing Zed to spawn on them
 HarassingZombieAtNightOnly				= false;	// Spawn harassing zombies at night only.
 HarassingLoopTime						= 180;		// Check for players to harass every X seconds (Default 180 seconds)
 HarassingConfig = [

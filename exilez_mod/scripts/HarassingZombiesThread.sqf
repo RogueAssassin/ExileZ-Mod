@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-private ["_chanceRoll","_nPlayer","_sTime","_group","_count","_groupSize","_vestGroup","_lootGroup","_zombieGroup","_playerObj","_playerName","_playerPosition"];
+private ["_chanceRoll","_nPlayer","_sTime","_group","_count","_groupSize","_vestGroup","_lootGroup","_zombieGroup","_playerObj","_playerName","_playerPosition","_skipPlayer"];
 
 _groupSize =         (_this select 0) select 0;
 _vestGroup =         (_this select 0) select 1;
@@ -27,44 +27,50 @@ if (time < 120) exitWith
 		diag_log format["ExileZ Mod: HarassingZombiesLoop: GroupSize : %1 | Vest : %2 | Loot : %3 | ZGroup : %4",_groupSize,_vestGroup,_lootGroup,_zombieGroup];
 	};
 	
+	// Setup missing skipping the player
+	_skipPlayer = false;
+	
 	// Not in Traders
-	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) exitWith
+	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) then
 	{
 		if (ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in a SafeZone, no Harassing Zombie for them.",_playerName];
+			_skipPlayer = true;
 		};
 	};
 	sleep 0.5;
 	
 	// Not in Territory
-	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) exitWith
+	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) then
 	{
 		if (ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in their Territory, no Harassing Zombie for them.",_playerName];
+			_skipPlayer = true;
 		};
 	};
 	sleep 0.5;
 	
 	// Roll for Harassing Zombie chance..
 	_chanceRoll = random (floor 99);
-	if (HarassingZedChance <= _chanceRoll) exitWith
+	if (HarassingZedChance <= _chanceRoll) then
 	{
 		if (ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 got lucky, no Harassing Zombie for them.",_playerName];
+			_skipPlayer = true;
 		};
 	};
 	sleep 0.5;
 
-	if ((HarassingZombieAtNightOnly && (daytime >= NightStartTime or daytime < NightEndTime)) || !(HarassingZombieAtNightOnly)) then 
+	if ((HarassingZombieAtNightOnly && (daytime >= NightStartTime or daytime < NightEndTime) && !(_skipPlayer)) || (!(HarassingZombieAtNightOnly) && !(_skipPlayer))) then 
 	{
 		if (isPlayer _x) then 
 		{ 

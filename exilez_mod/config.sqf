@@ -4,10 +4,12 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-// Global Settings
-ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
+// Logging Settings
 Debug							= false;             // debug messages.
 ExtendedLogging					= true;				// Slightly more information in logs.
+
+// Global Settings
+ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
 MinSpawnDistance				= 20;               // Closest distance from any player to spawn a zombie.
 MaxSpawnDistance				= 160;              // Max distance a zombie should spawn from a player.
 MaxDistance						= 300;              // Max distance to players before delete.
@@ -15,10 +17,9 @@ MaxTime							= 30;               // Max time away from a player before delete.
 RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
 RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
 TriggerGroupScaling				= 0.25;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
-LightsOff						= true;             // Kill all the light on map except the player lights.
-UseHarassingZombies				= true;             // Spawn harassing zombies around the player.
-HarassingZombieAtNightOnly		= false;			// Spawn harassing zombies at night only.
-UseHorde						= true;             // Use the horde spawner             
+
+// Night settings
+LightsOff						= true;             // Kill all the light on map except the player lights.           
 NightStartTime					= 18;               // Time at which it is night in hours
 NightEndTime					= 6;                // Time at which it is no longer night in hours
 
@@ -36,16 +37,18 @@ EnableMoneyOnCorpse				= true;             // Money stays on corpse for looting
 ZombieMoney						= 5;                // Money per zombie kill
 ZombieMaxMoney					= 15;               // Max Money per zombie kill-random amount put on corpses
 
+// Stats settings
 EnableStatKill					= true;				// Enable stat tracking for Kills DB entry
 EnableZombieStatKill			= false;			// Enable stat tracking for ZedKills DB entry
-
 EnableRankChange				= false;			// Enable Rank change
 EnableHumanityChange			= false;			// Enable GR8's Humanity change
 ExileZombieKillRankChange		= 5;				// Both Rank and Humanity are dependant on this config
 
+// Respect settings
 EnableRespectOnKill				= true;				// Self Explanatory
 ZombieRespect					= 10;				// Respect per zombie kill
 
+// Frag settings
 RoadKillBonus					= 10;				// Bonus Respect if roadkill
 MinDistance						= 50;				// Minimal distance for range bonus
 CqbDistance						= 10;				// Minimal ditance for close quarter bonus
@@ -112,25 +115,29 @@ EZM_ryanzombiesmovementspeedspider        = 1;      // Animation speed for spide
 EZM_ryanzombiesmovementspeedcrawler       = 1;      // Animation speed for crawler
 
 // Harassing Zombies Config
-HarassingLoopTime						= 180; // Check for players to harass every X seconds (Default 180 seconds)
+UseHarassingZombies						= true;		// Spawn harassing zombies around the player.
+HarassingZedChance						= 100;		// Chance per player for a harassing Zed to spawn on them
+HarassingZombieAtNightOnly				= false;	// Spawn harassing zombies at night only.
+HarassingLoopTime						= 180;		// Check for players to harass every X seconds (Default 180 seconds)
 HarassingConfig = [
-/* 0 Groups Size  */         2,                  // maximum number of zombies around a player
-/* 1 Vest group */           Nothing,            // Vest function defined in ZVest.sqf
-/* 2 Loot group */           Nothing,            // Loot function defined in ZLoot.sqf
-/* 3 Zombie group */         Easy               // Group function defined in ZClasses.sqf
+/* 0 Groups Size  */         2,						// maximum number of zombies around a player
+/* 1 Vest group */           Nothing,				// Vest function defined in ZVest.sqf
+/* 2 Loot group */           Nothing,				// Loot function defined in ZLoot.sqf
+/* 3 Zombie group */         Easy					// Group function defined in ZClasses.sqf
 ];
 
 // Hordes Config
-HordeLoopTime							= 30; // Spawn a Horde every X Minutes. (Default 30 mins)
+UseHorde								= true;		// Use the horde spawner  
+HordeLoopTime							= 30;		// Spawn a Horde every X Minutes. (Default 30 mins)
 HordeConfig = [
-/* 0 Groups Size  */         15,                 // maximum number of zombies around a player
-/* 1 Vest group */           Basic,              // Vest function defined in ZVest.sqf
-/* 2 Loot group */           DocAndAmmo,         // Loot function defined in ZLoot.sqf
-/* 3 Zombie group */         MediumMix,          // Group function defined in ZClasses.sqf
-/* 4 Horde density */        25                  // Radius in which the zombies will spawn should be lower than Min Spawn Distance.
+/* 0 Groups Size  */         15,					// maximum number of zombies around a player
+/* 1 Vest group */           Basic,					// Vest function defined in ZVest.sqf
+/* 2 Loot group */           DocAndAmmo,			// Loot function defined in ZLoot.sqf
+/* 3 Zombie group */         MediumMix,				// Group function defined in ZClasses.sqf
+/* 4 Horde density */        25						// Radius in which the zombies will spawn should be lower than Min Spawn Distance.
 ];
 
-// Use Map Triggers or Just Hordes and Harassing Zombies?
+// Use Map Triggers as well as Hordes and Harassing Zombies?
 UseTriggers                  = true;
 
 // Check Config Compiled

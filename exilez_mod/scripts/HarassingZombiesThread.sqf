@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-private ["_nPlayer","_sTime","_group","_count","_groupSize","_vestGroup","_lootGroup","_zombieGroup","_playerObj","_playerName","_playerPosition"];
+private ["_chanceRoll","_nPlayer","_sTime","_group","_count","_groupSize","_vestGroup","_lootGroup","_zombieGroup","_playerObj","_playerName","_playerPosition"];
 
 _groupSize =         (_this select 0) select 0;
 _vestGroup =         (_this select 0) select 1;
@@ -26,8 +26,18 @@ if (time < 120) exitWith
 	{
 		diag_log format["ExileZ Mod: HarassingZombiesLoop: GroupSize : %1 | Vest : %2 | Loot : %3 | ZGroup : %4",_groupSize,_vestGroup,_lootGroup,_zombieGroup];
 	};
+	
+	// Not in Traders
+	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) exitWith {};
+	
+	// Not in SafeZone
+	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) exitWith {};
+	
+	// Roll for Harassing Zombie chance..
+	_chanceRoll = random (floor 99);
+	if (HarassingZedChance <= _chanceRoll) exitWith {};	
 
-	if ((HarassingZombieAtNightOnly AND (daytime >= NightStartTime or daytime < NightEndTime)) OR !(HarassingZombieAtNightOnly)) then 
+	if ((HarassingZombieAtNightOnly && (daytime >= NightStartTime or daytime < NightEndTime)) || !(HarassingZombieAtNightOnly)) then 
 	{
 		if (isPlayer _x) then 
 		{ 

@@ -359,9 +359,6 @@ if (UseHorde) then
 		diag_log "---------------------------------------------------------------------";
 	};
 };
-	
-//Exile Vars
-MaxTerritoryRange = getNumber (missionConfigFile >> "CfgTerritories" >> "maximumRadius");
 
 //Create Triggers
 if (UseTriggers) then

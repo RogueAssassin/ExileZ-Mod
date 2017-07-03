@@ -35,7 +35,15 @@ if (time < 120) exitWith
 	
 	// Roll for Harassing Zombie chance..
 	_chanceRoll = random (floor 99);
-	if (HarassingZedChance <= _chanceRoll) exitWith {};	
+	if (HarassingZedChance <= _chanceRoll) exitWith
+	{
+		if (ExtendedLogging) then 
+		{
+			_playerObj = _x;
+			_playerName = name _playerObj;
+			diag_log format["ExileZ Mod: %1 got lucky, no Harassing Zombie for them.",_playerName];
+		};
+	};	
 
 	if ((HarassingZombieAtNightOnly && (daytime >= NightStartTime or daytime < NightEndTime)) || !(HarassingZombieAtNightOnly)) then 
 	{
@@ -47,20 +55,20 @@ if (time < 120) exitWith
 				_playerName = name _playerObj;
 				_playerPosition = getPos _playerObj;
 				
-				//get group from player
+				// Get group from player
 				_group = _playerObj getvariable ["group", objNull];
 				
-				//if nul create group
+				// If nul create group
 				if (isNull _group) then 
 				{
 					_group = [_playerObj] call InitGroup;
 					sleep 1;
 				};
 
-				//count number of zombie alive in the group
+				// Count number of zombie alive in the group
 				_count = {alive _x} count units _group; 	
 				
-				//Spawn 1 zombie if count is low enough
+				// Spawn 1 zombie if count is low enough
 				if (_count < _groupSize) then 
 				{
 					nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;

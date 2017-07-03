@@ -45,7 +45,7 @@ if (ExplosiveZombies) then
 
 if (ExtendedLogging) then
 {
-	diag_log format["ExileZ Mod: Removing 1 Zombie	|	Killed by %1", name _killer];
+	diag_log format["ExileZ Mod: Zombie killed by %1", name _killer];
 };
 
 

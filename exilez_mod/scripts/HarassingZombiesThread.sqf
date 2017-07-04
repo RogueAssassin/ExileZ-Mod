@@ -104,7 +104,7 @@ if (time < 120) exitWith
 					
 					if (ExtendedLogging) then 
 					{
-						diag_log format["ExileZ Mod: Spawning 1 Harassing Zombie for %1.",_playerName];
+						diag_log format["ExileZ Mod: Spawning %1 Harassing Zombie(s) for %2.",(_groupSize - _count),_playerName];
 					};
 				};
 			};

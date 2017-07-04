@@ -16,7 +16,7 @@ if (ExtendedLogging) then
 	_zombieClass = typeOf _zombie;
 	_zombiePos = getPos _zombie;
 	
-	if ((isNull _zombie) || (!(alive _zombie))) exitWith
+	if ((isNull _zombie) || (!(alive _zombie))) then
 	{
 		deleteVehicle _zombie;
 		EZM_deadZombies = EZM_deadZombies - [_zombie];

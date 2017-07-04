@@ -15,8 +15,8 @@ MaxSpawnDistance				= 160;              // Max distance a zombie should spawn fr
 MaxDistance						= 300;              // Max distance to players before delete.
 MaxTime							= 30;               // Max time away from a player before delete.
 MaxTimeDead						= 300;				// Max time for a dead Zombie to stay before delete. (Default 5 minutes)
-RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
-RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
+RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. (the check is done every MaxTime)
+RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. (the check is done every MaxTime)
 TriggerGroupScaling				= 0;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
 
 // Night settings

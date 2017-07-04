@@ -1,6 +1,6 @@
 # ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
-This is an update/modification of ExileZ 2.0 by Patrix87. The file scructure has been cleaned up, along with a number of edits to fix or update functionality. The intention of this modification is to build upon the work done with ExileZ 2.0 and to add functionality with ease of configuration in mind.
+This is a total overhaul/modification of ExileZ 2.0 by Patrix87. The file scructure has been cleaned up, along with a number of edits to fix or update functionality. The intention of this modification is to build upon the work done with ExileZ 2.0 and to add functionality with ease of configuration in mind.
 
 ## Features
 

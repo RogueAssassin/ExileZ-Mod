@@ -27,7 +27,7 @@ if (time < 120) exitWith
 		diag_log format["ExileZ Mod: HarassingZombiesLoop: GroupSize : %1 | Vest : %2 | Loot : %3 | ZGroup : %4",_groupSize,_vestGroup,_lootGroup,_zombieGroup];
 	};
 	
-	// Setup missing skipping the player
+	// Setup skipping the player
 	_skipPlayer = false;
 	
 	// Not in Traders
@@ -93,10 +93,15 @@ if (time < 120) exitWith
 				// Count number of zombie alive in the group
 				_count = {alive _x} count units _group; 	
 				
-				// Spawn 1 zombie if count is low enough
+				// Fill the group
 				if (_count < _groupSize) then 
 				{
-					nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+					for "_i" from 1 to (_groupSize - _count) do 
+					{
+						nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+						sleep 1;
+					};
+					
 					if (ExtendedLogging) then 
 					{
 						diag_log format["ExileZ Mod: Spawning 1 Harassing Zombie for %1.",_playerName];

@@ -12,7 +12,6 @@ if (ExtendedLogging) then
 };
 
 {
-
 	_zombie = _x;
 	_zombieClass = typeOf _zombie;
 	_zombiePos = getPos _zombie;

@@ -5,7 +5,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 */
 
 // Logging Settings
-Debug							= false;             // debug messages.
+Debug							= false;			// debug messages.
 ExtendedLogging					= true;				// Slightly more information in logs.
 
 // Global Settings
@@ -14,9 +14,10 @@ MinSpawnDistance				= 20;               // Closest distance from any player to s
 MaxSpawnDistance				= 160;              // Max distance a zombie should spawn from a player.
 MaxDistance						= 300;              // Max distance to players before delete.
 MaxTime							= 30;               // Max time away from a player before delete.
+MaxTimeDead						= 300;				// Max time for a dead Zombie to stay before delete. (Default 5 minutes)
 RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
 RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. *(the check is done every MaxTime) will only work with zombies that are configured to avoid territories
-TriggerGroupScaling				= 0.25;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
+TriggerGroupScaling				= 0;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
 
 // Night settings
 LightsOff						= true;             // Kill all the light on map except the player lights.           
@@ -24,11 +25,11 @@ NightStartTime					= 18;               // Time at which it is night in hours
 NightEndTime					= 6;                // Time at which it is no longer night in hours
 
 // Explosive zombies          
-ExplosiveZombies				= true;             // randomly boobie trapped zombies exploding a few seconds after dying.
+ExplosiveZombies				= true;				// randomly boobie trapped zombies exploding a few seconds after dying.
 ExplosiveZombiesRatio			= 2;                // percentage of explosive zombies
 ExplosiveZombieWarning			= "IT'S A TRAP !!!";// Message that will display a few seconds before the explosion of a zombie.
 ExplosionDelay					= 3;                // self-explanatory
-ExplosiveType					= "Grenade";       // "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
+ExplosiveType					= "Grenade";		// "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
 ExplosiveRespect				= 100;              // Bonus respect for Exploding zombies
 
 // Killing zombies settings

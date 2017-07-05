@@ -1,118 +1,58 @@
-# ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
+# ExileZ Crashes by [FPS]kuplion - Based on Heli Crashes by Darth Rogue
 
-This is a total overhaul/modification of ExileZ 2.0 by Patrix87. The file scructure has been cleaned up, along with a number of edits to fix or update functionality. The intention of this modification is to build upon the work done with ExileZ 2.0 and to add functionality with ease of configuration in mind.
+This is a modification of Heli Crashes by Darth Rogue to allow it to work with ExileZ Mod and spawn Zombies around the crashes, much like the classic DayZ Mod crashsites.
 
 ## Features
 
+Classic DayZ Mod style crashsites
+
+Loot scattered around the wrecks
+
 Dynamic Zombie spawning
 
-Location based Zombie spawning
-
-Harassing Zombies
-
-Hordes
-
-Built in Zombie mission (for specific maps)
-
-Working safezone and territory detection
-
-Supports ANY map (and includes a number of map specific configs)
-
-Highly configurable Zombie options
-
-Supports Infections (See here for required additional files: http://steamcommunity.com/sharedfiles/filedetails/?id=614815221)
-
 ## Requirements
+
+ExileZ Mod (http://www.exilemod.com/topic/22531-release-exilez-mod-by-fpskuplion-based-on-exilez-20-by-patrix87/)
 
 Zombies and Demons (http://steamcommunity.com/sharedfiles/filedetails/?id=501966277)
 
 ExileMod (http://www.exilemod.com/downloads/)
 
-## Changes
-
-Fixed Safezone detection
-
-Fixed Territory detection
-
-Optimised file structure
-
-Added specific map configs
-
-Added support for ANY map
-
-Integrated Zombie Monitor for better performance
-
-Optimised Harassing and Horde loops
-
 ## Upcoming Changes
-
-AI offloading
 
 Code optimisation
 
-More map configs
+More wrecks / loot positions
 
 ## Download
 
-https://github.com/kuplion/ExileZ-Mod
+https://github.com/kuplion/ExileZ-Crashes
 
 ## Installation
 
-1: Edit main settings in 'exilez_mod\config.sqf'.
+1: Edit the main settings in 'exilez_crashes\config.sqf'.
 
-2: Edit triggers and settings (if required) in 'exilez_mod\triggers\'.
+2: Edit 'ExileClient_system_lootManager_thread_spawn.sqf' to add any additional wreck classes (Line 23).
 
-3: Edit zombie classes and loot in 'exilez_mod\zombies\'.
+3: Add 'ExileClient_system_lootManager_thread_spawn.sqf' to your CfgExileCustomCode.
 
-4: Edit the Zombie mission loot in 'exilez_mod\mission\zMissionLootCrate.sqf'.
+4: Edit 'wreck_loot_positions.hpp' with any additional wrecks and loot positions.
 
-5: Pack exilez_mod.pbo with either PBO Manager 1.4b x64 (http://www.armaholic.com/page.php?id=16369) or Eliteness/MikeRo tools if you have them.
+5: Add 'wreck_loot_positions.hpp' to your 'exile_server_config.pbo' and '#include "wreck_loot_positions.hpp"' to the top of 'class CfgBuildings' just after the bracket (Line 28).
 
-6: Place exilez_mod.pbo in your '@ExileServer\addons\' folder.
+6: Pack 'exilez_crashes.pbo' with either PBO Manager 1.4b x64 (http://www.armaholic.com/page.php?id=16369) or Eliteness/MikeRo tools if you have them.
 
-7: Add "ryanzombies" & "ryanzombiesfunctions" to the "addons" section of your mission.sqm (don't forget to adjust your commas accordingly!!)
+7: Repack 'exile_server_config.pbo'.
 
-addOns[]=
-{
-	"exile_client",
-	"a3_map_altis",
-	"Ryanzombies",
-	"ryanzombiesfunctions" // Make sure the last entry does not have a comma after it!!
-};
-
-## Configuration
-
-The script is configured to run with Altis, Tanoa, Namalsk, Malden, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, Taviana, and Taunus, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.
-
-Almost all of the information related to the configuration is in 'exilez_mod\config.sqf'.
-
-## How to export Triggers positions
-
-1: Open arma with NO MODS other than the map you are using.
-
-2: Open Eden Editor and DO NOT load a mission file.
-
-3: Place an Elliptic Marker *(not a trigger) on every region you want a spawner and set its radius.
-
-4: Start the scenario (run the mission).
-
-5: Copy Paste the code from GetMarkerCmd.txt inside the debug console (press ESC to see it).
-
-6: Execute the code.
-
-7: Open Notepad, CTRL+V / (Paste).
-
-8: ???
-
-9: Profit!
+8: Place 'exilez_crashes.pbo' in your '@ExileServer\addons\' folder.
 
 ## Donations
 
-If you feel so inclined, donations can be sent to myself via PayPal donate@FriendlyPlayerShooting.com or to Patrix87 via PayPal patrix87@gmail.com
+If you feel so inclined, donations can be sent to PayPal donate@FriendlyPlayerShooting.com
 
 ## Credits
 
-Original code base by Patrix87. Trigger Generator by Second_Coming. Taunus triggers by yukihito23. Chernobyl Zone (and Chernobyl Zone Autumn) triggers by lusu007. Stratis triggers by AKA Tony.
+Original code base by Darth_Rogue, Vampire, xBowBii, and Richie
 
 ## License
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)

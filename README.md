@@ -44,6 +44,8 @@ Integrated Zombie Monitor for better performance
 
 Optimised Harassing and Horde loops
 
+Blacklist areas from Zombies spawning
+
 ## Upcoming Changes
 
 AI offloading

@@ -30,15 +30,35 @@ if (time < 120) exitWith
 	// Setup skipping the player
 	_skipPlayer = false;
 	
+	// Not in Blacklisted Areas
+	if (UseAreaBlackList) then
+	{
+		_playerPos = getPos _x;
+		{
+			if (_playerPos distance (_x select 0) <= _x select 1) then
+			{
+				_skipPlayer = true;
+				if (ExtendedLogging) then 
+				{
+					_playerObj = _x;
+					_playerName = name _playerObj;
+					diag_log format["ExileZ Mod: %1 is in a Blacklisted area, no Harassing Zombie for them.",_playerName];
+				};
+			};
+		}
+		forEach BlackListedPositions;		
+	};
+	sleep 0.5;
+	
 	// Not in Traders
 	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) then
 	{
+		_skipPlayer = true;
 		if (ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in a SafeZone, no Harassing Zombie for them.",_playerName];
-			_skipPlayer = true;
 		};
 	};
 	sleep 0.5;
@@ -46,12 +66,12 @@ if (time < 120) exitWith
 	// Not in Territory
 	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) then
 	{
+		_skipPlayer = true;
 		if (ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in their Territory, no Harassing Zombie for them.",_playerName];
-			_skipPlayer = true;
 		};
 	};
 	sleep 0.5;
@@ -60,12 +80,12 @@ if (time < 120) exitWith
 	_chanceRoll = random (floor 99);
 	if (HarassingZedChance <= _chanceRoll) then
 	{
+		_skipPlayer = true;
 		if (ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 got lucky, no Harassing Zombie for them.",_playerName];
-			_skipPlayer = true;
 		};
 	};
 	sleep 0.5;

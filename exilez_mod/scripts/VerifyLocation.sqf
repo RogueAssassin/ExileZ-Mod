@@ -36,6 +36,21 @@ if (_validLocation) then
 	};
 };
 
+// Check for Blacklisted Areas
+if (_validLocation) then 
+{
+	if (UseAreaBlackList) then
+	{
+		{
+			if (_position distance (_x select 0) <= _x select 1) then
+			{
+				_validLocation = false
+			};
+		}
+		forEach BlackListedPositions;
+	};
+};
+
 // Check for SafeZones
 if (_validLocation) then 
 {

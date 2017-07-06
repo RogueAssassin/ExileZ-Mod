@@ -11,7 +11,7 @@ ExtendedLogging					= true;				// Slightly more information in logs.
 // Global Settings
 ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
 MinSpawnDistance				= 20;               // Closest distance from any player to spawn a zombie.
-MaxSpawnDistance				= 160;              // Max distance a zombie should spawn from a player.
+MaxSpawnDistance				= 100;              // Max distance a zombie should spawn from a player.
 MaxDistance						= 300;              // Max distance to players before delete.
 MaxTime							= 30;               // Max time away from a player before delete.
 MaxTimeDead						= 300;				// Max time for a dead Zombie to stay before delete. (Default 5 minutes)
@@ -136,6 +136,16 @@ HordeConfig = [
 /* 2 Loot group */           DocAndAmmo,			// Loot function defined in ZLoot.sqf
 /* 3 Zombie group */         MediumMix,				// Group function defined in ZClasses.sqf
 /* 4 Horde density */        25						// Radius in which the zombies will spawn should be lower than Min Spawn Distance.
+];
+
+// Blacklisted Areas
+UseAreaBlackList = false;
+BlackListedPositions =
+[
+	//[[CoordinatesX,CoordinatesY],Radius] // Example
+	[[14599,16797],175],
+	[[23334,24188],175],
+	[[2998,18175],175]
 ];
 
 // Use Map Triggers as well as Hordes and Harassing Zombies?

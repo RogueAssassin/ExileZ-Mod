@@ -340,7 +340,7 @@ else
 // Add Harassing Zombies Loop to ExileServer Thread
 if (EZM_UseHarassingZombies) then
 {
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		[EZM_HarassingLoopTime/2, EZM_HarassingZombiesThread, [EZM_HarassingConfig], true] call ExileServer_system_thread_addTask;
 		diag_log "---------------------------------------------------------------------";

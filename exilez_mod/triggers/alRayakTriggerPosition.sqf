@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Cities = [  				//Trigger_1            
+EZM_Cities = [  				//Trigger_1            
 [6210.99,4462.98,300], 		// Aalyat
 [3240.99,12061,300],		// Agraabah
 [6415.99,6205.03,300], 		// Al Burkamal
@@ -96,7 +96,7 @@ Cities = [  				//Trigger_1
 [3707.37,10112.6,300]		// Zirmin
 ];
 
-Military = [    	//Trigger_2     
+EZM_Military = [    	//Trigger_2     
 [4829.77,8935.17,150],
 [5571.12,10190.2,150],
 [1916.47,8222.82,150],

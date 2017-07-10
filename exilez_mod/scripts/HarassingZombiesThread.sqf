@@ -14,7 +14,7 @@ _zombieGroup =       (_this select 0) select 3;
 // Wait 2 minutes before starting Harassing Zombie Loop
 if (time < 120) exitWith 
 {
-    if (ExtendedLogging) then 
+    if (EZM_ExtendedLogging) then 
     {
         diag_log format["ExileZ Mod: Waiting until the server has been up at least 2 minutes (it has currently been up for %1 seconds)",time];
     };
@@ -22,7 +22,7 @@ if (time < 120) exitWith
 
 // Run the Harassing Zombie Loop
 {
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		diag_log format["ExileZ Mod: HarassingZombiesLoop: GroupSize : %1 | Vest : %2 | Loot : %3 | ZGroup : %4",_groupSize,_vestGroup,_lootGroup,_zombieGroup];
 	};
@@ -31,14 +31,14 @@ if (time < 120) exitWith
 	_skipPlayer = false;
 	
 	// Not in Blacklisted Areas
-	if (UseAreaBlackList) then
+	if (EZM_UseAreaBlackList) then
 	{
 		_playerPos = getPos _x;
 		{
 			if (_playerPos distance (_x select 0) <= _x select 1) then
 			{
 				_skipPlayer = true;
-				if (ExtendedLogging) then 
+				if (EZM_ExtendedLogging) then 
 				{
 					_playerObj = _x;
 					_playerName = name _playerObj;
@@ -46,51 +46,51 @@ if (time < 120) exitWith
 				};
 			};
 		}
-		forEach BlackListedPositions;		
+		forEach EZM_BlackListedPositions;	
+		sleep 0.5;	
 	};
-	sleep 0.5;
 	
 	// Not in Traders
-	if ((RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) then
+	if ((EZM_RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) then
 	{
 		_skipPlayer = true;
-		if (ExtendedLogging) then 
+		if (EZM_ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in a SafeZone, no Harassing Zombie for them.",_playerName];
 		};
+		sleep 0.5;
 	};
-	sleep 0.5;
 	
 	// Not in Territory
-	if ((RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) then
+	if ((EZM_RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) then
 	{
 		_skipPlayer = true;
-		if (ExtendedLogging) then 
+		if (EZM_ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in their Territory, no Harassing Zombie for them.",_playerName];
 		};
+		sleep 0.5;
 	};
-	sleep 0.5;
 	
 	// Roll for Harassing Zombie chance..
 	_chanceRoll = random (floor 99);
-	if (HarassingZedChance <= _chanceRoll) then
+	if (EZM_HarassingZedChance <= _chanceRoll) then
 	{
 		_skipPlayer = true;
-		if (ExtendedLogging) then 
+		if (EZM_ExtendedLogging) then 
 		{
 			_playerObj = _x;
 			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 got lucky, no Harassing Zombie for them.",_playerName];
 		};
+		sleep 0.5;
 	};
-	sleep 0.5;
 
-	if ((HarassingZombieAtNightOnly && (daytime >= NightStartTime or daytime < NightEndTime) && !(_skipPlayer)) || (!(HarassingZombieAtNightOnly) && !(_skipPlayer))) then 
+	if ((EZM_HarassingZombieAtNightOnly && (daytime >= EZM_NightStartTime or daytime < EZM_NightEndTime) && !(_skipPlayer)) || (!(EZM_HarassingZombieAtNightOnly) && !(_skipPlayer))) then 
 	{
 		if (isPlayer _x) then 
 		{ 
@@ -106,7 +106,7 @@ if (time < 120) exitWith
 				// If nul create group
 				if (isNull _group) then 
 				{
-					_group = [_playerObj] call InitGroup;
+					_group = [_playerObj] call EZM_InitGroup;
 					sleep 1;
 				};
 
@@ -119,13 +119,13 @@ if (time < 120) exitWith
 					for "_i" from 1 to (_groupSize - _count) do 
 					{
 						// Max Zombies reached?
-						if ((count EZM_aliveZombies) <= MaxZombies) then
+						if ((count EZM_aliveZombies) <= EZM_MaxZombies) then
 						{
-							nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+							nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn EZM_SpawnZombie;
 						}
 						else
 						{
-							if (ExtendedLogging) then
+							if (EZM_ExtendedLogging) then
 							{
 								diag_log "ExileZ Mod: Maximum Zombies reached for now!";
 							};
@@ -133,7 +133,7 @@ if (time < 120) exitWith
 						sleep 1;
 					};
 					
-					if (ExtendedLogging) then 
+					if (EZM_ExtendedLogging) then 
 					{
 						diag_log format["ExileZ Mod: Spawning %1 Harassing Zombie(s) for %2.",(_groupSize - _count),_playerName];
 					};

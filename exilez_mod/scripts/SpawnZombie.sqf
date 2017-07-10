@@ -17,7 +17,7 @@ _vestGroup =         _this select 2;
 _lootGroup =         _this select 3;
 _zombieGroup =       _this select 4;
 
-if (Debug) then
+if (EZM_Debug) then
 {
 	diag_log format["ExileZ Mod: SpawnZombie: Group : %1 | Position : %2 | Vest : %3 | Loot : %4 | ZGroup : %5",_group,_position,_vestGroup,_lootGroup,_zombieGroup];
 };
@@ -28,7 +28,7 @@ if (count _this == 7) then
 }
 else
 {
-	_MaxSpawnDistance = MaxSpawnDistance;
+	_MaxSpawnDistance = EZM_MaxSpawnDistance;
 };
 
 
@@ -37,27 +37,27 @@ for "_i" from 1 to 5 do {
 	//Get random position
 	if !(count _position == 0) then 
 	{
-		_TempPosition = [_position,MinSpawnDistance,_MaxSpawnDistance] call GetRandomLocation;
+		_TempPosition = [_position,EZM_MinSpawnDistance,_MaxSpawnDistance] call EZM_GetRandomLocation;
 	};
 	//Validate location
-	_validLocation = [_TempPosition] call VerifyLocation;
+	_validLocation = [_TempPosition] call EZM_VerifyLocation;
 	if (_validLocation) exitWith {_validLocation};
 	sleep 0.05;
 };
 _position = _TempPosition;
 
-GetZombieClass =
+EZM_GetZombieClass =
 {
 	_return = 0;
 	_maxValue = (_this select ((count _this) - 1)) select 1;	//Count how many type, remove 1 because index start a 0, select the last index, select the highest value.
 	
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		diag_log format["ExileZ Mod: Zombie Group Highest Compound Weight : %1",_MaxValue];
 	};
 	_result = ceil random (_maxValue);
 	
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		diag_log format["ExileZ Mod: Randomly Selected Value : %1",_result];
 	};
@@ -65,7 +65,7 @@ GetZombieClass =
 	{
 		if((_x select 1) >= _result) exitwith
 		{
-			if (Debug) then
+			if (EZM_Debug) then
 			{
 				diag_log format["ExileZ Mod: Selected Zombie Group : %1		Compound Weight : %2",(_x select 0),(_x select 1)];
 			};
@@ -73,7 +73,7 @@ GetZombieClass =
 		};
 	}foreach _this;
 	
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		diag_log format["ExileZ Mod: Selected Zombie Class : %1",_return];
 	};
@@ -82,7 +82,7 @@ GetZombieClass =
 
 if !(_validLocation) then
 {
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		diag_log format["ExileZ Mod: No suitable spawn location found for a Zombie near %1 ",_position];
 	};
@@ -90,9 +90,9 @@ if !(_validLocation) then
 else
 {	
 	//Get a Zombie Class
-	_zClass = _zombieGroup call GetZombieClass;
+	_zClass = _zombieGroup call EZM_GetZombieClass;
 
-	if (Debug) then
+	if (EZM_Debug) then
 	{
 		diag_log format["ExileZ Mod: Spawning 1 Zombie	|	Position : %1	|	Class : %2 ",_position,_zClass];
 	};
@@ -116,7 +116,7 @@ else
 	];*/
 	
 	// New Spawn Zombie Method	
-	_tempGroup = createGroup ZombieSide;
+	_tempGroup = createGroup EZM_ZombieSide;
 	_tempGroup setCombatMode "BLUE";
 	_tempGroup allowFleeing 0;
 	_tempGroup enableAttack false;
@@ -127,7 +127,7 @@ else
 	_zombie disableAI "FSM";
 	_zombie enableAI "ANIM";
 	_zombie disableConversation true;
-	_zombie addMPEventHandler ["MPKilled", {_this call ZMPKilled;}];
+	_zombie addMPEventHandler ["MPKilled", {_this call EZM_ZMPKilled;}];
 	
 	// Add Zombie Loot
 	if !(call _vestGroup == "") then
@@ -148,7 +148,7 @@ else
 	// Add to Zombie Monitor
 	EZM_aliveZombies pushback _zombie;
 	
-	if (ExtendedLogging) then
+	if (EZM_ExtendedLogging) then
 	{
 		diag_log "ExileZ Mod: Spawning 1 Zombie	and adding it to the Monitor";
 	};

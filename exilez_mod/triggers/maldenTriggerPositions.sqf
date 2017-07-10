@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Military = [         
+EZM_Military = [         
 [2723.23,7401.96,100], //Bushlurker Monument
 [8152.1,10450.5,100], //Airport 1
 [8177.78,10062,300], //Airport 2
@@ -27,7 +27,7 @@ Military = [
 [11627.6,4467.34,75] //Small Military Complex
 ];                      
                         
-NoBuildings = [         
+EZM_NoBuildings = [         
 [5841.37,10756.2,150], //Military Ruins
 [5503.87,11637.2,75],
 [5450.96,11389.4,75],
@@ -58,15 +58,15 @@ NoBuildings = [
 [3021.78,5884.39,75]
 ];                     
                         
-NoMansLand = [        
+EZM_NoMansLand = [        
 [10598.7,3945.17,1575] //No Mans Land
 ];                      
                         
-Mission = [             
+EZM_Mission = [             
 [9786.97,3799.66,350] //Loot and Death
 ];
 
-Cities = [
+EZM_Cities = [
 [5541.38,7002.63,150], //Arudy
 [5397.9,2781.94,300], //Cancon
 [5876.73,3550.01,300], //Chapoi
@@ -80,7 +80,7 @@ Cities = [
 [7160.23,8956.09,250] //Saint Louis
 ];                      
                         
-Towns = [              
+EZM_Towns = [              
 [6634.17,8802.73,150], //Petrol Station
 [5557.36,11196.9,150], //Lolisse
 [3583.63,8532.77,150], //Goisse

@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Military = [         
+EZM_Military = [         
 [2081,13190,500],      // Tuvanaka Airbase
 [2193,3544,300],      // Bala Airstrip
 [12100,2500,125],       // Fortress ruins
@@ -16,7 +16,7 @@ Military = [
 [8368,10301,200]		// Tanoa Sugar Company
 ];                      
                         
-NoBuildings = [         
+EZM_NoBuildings = [         
 [11039,8466,125],      // Temple ruins
 [11959,10373,300],       // Red Spring Surface Mine
 [3865,13919,250],		// Camp Remnants
@@ -27,15 +27,15 @@ NoBuildings = [
 [1920,10679,150]		// Nani
 ];                     
                         
-NoMansLand = [        
+EZM_NoMansLand = [        
 [2901.51,12333.8,1600]       // No man's land (Contaminated Zone)
 ];                      
                         
-Mission = [             
+EZM_Mission = [             
 [2901.51,12333.8,300]        // Mission (Contaminated Zone)
 ];
 
-Cities = [
+EZM_Cities = [
 [12461,14212,125],		// Hotel Resort
 [3865,13919,175],		// Camp Remnants
 [3071,11123,200],		// Belfort
@@ -86,7 +86,7 @@ Cities = [
 [4162,11697,150]		// Harbour Remnants
 ];                      
                         
-MainCities = [              
+EZM_MainCities = [              
 [5508,4081,300],		// Katkoula   
 [11641,2707,300],		// Lijnhaven
 [9707,13577,400],		// La Rochelle

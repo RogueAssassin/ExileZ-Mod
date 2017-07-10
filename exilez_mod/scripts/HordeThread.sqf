@@ -16,7 +16,7 @@ _hordeDensity =      (_this select 0) select 4;
 // Wait 2 minutes before starting Horde Loop
 if (time < 120) exitWith 
 {
-    if (ExtendedLogging) then 
+    if (EZM_ExtendedLogging) then 
     {
         diag_log format["ExileZ Mod: Waiting until the server has been up at least 2 minutes (it has currently been up for %1 seconds)",time];
     };
@@ -37,16 +37,16 @@ if (_nPlayer >= 1) then
 		_playerObj = selectRandom _playerObjs;
 		//Check if player is in a valid location
 		_playerPosition = getPos _playerObj;
-		_validLocation = [_playerPosition,true] call VerifyLocation;
+		_validLocation = [_playerPosition,true] call EZM_VerifyLocation;
 		//if player is valid try to find a valid location 10 times
 		if (isPlayer _playerObj && alive _playerObj && _validLocation) then 
 		{
 			for "_i" from 1 to 10 do 
 			{
 				_playerPosition = getPos _playerObj;
-				_position = [_playerPosition,(MinSpawnDistance+_hordeDensity),(MaxSpawnDistance+_hordeDensity)] call GetRandomLocation;
+				_position = [_playerPosition,(EZM_MinSpawnDistance+_hordeDensity),(EZM_MaxSpawnDistance+_hordeDensity)] call EZM_GetRandomLocation;
 				//Validate location
-				_validLocation = [_position] call VerifyLocation;
+				_validLocation = [_position] call EZM_VerifyLocation;
 				if (_validLocation) exitWith {_validLocation};
 				sleep 0.05;
 			};
@@ -67,25 +67,25 @@ if (_nPlayer >= 1) then
 		//if nul create group
 		if (isNull _group) then 
 		{
-			_group = [_playerObj] call InitGroup;
+			_group = [_playerObj] call EZM_InitGroup;
 			sleep 1;
 		};
 
 		//Spawn the horde
-		if (ExtendedLogging) then 
+		if (EZM_ExtendedLogging) then 
 		{
 			diag_log format["ExileZ Mod: Spawning The Horde near %1.",_playerName];
 		};
 		for "_i" from 1 to _groupSize do 
 		{
 			// Max Zombies reached?
-			if ((count EZM_aliveZombies) <= MaxZombies) then
+			if ((count EZM_aliveZombies) <= EZM_MaxZombies) then
 			{
-				nul = [_group,_position,_vestGroup,_lootGroup,_zombieGroup,_hordeDensity] spawn SpawnZombie;
+				nul = [_group,_position,_vestGroup,_lootGroup,_zombieGroup,_hordeDensity] spawn EZM_SpawnZombie;
 			}
 			else
 			{
-				if (ExtendedLogging) then
+				if (EZM_ExtendedLogging) then
 				{
 					diag_log "ExileZ Mod: Maximum Zombies reached for now!";
 				};
@@ -95,7 +95,7 @@ if (_nPlayer >= 1) then
 	}
 	else
 	{
-		if (ExtendedLogging) then
+		if (EZM_ExtendedLogging) then
 		{
 			diag_log "ExileZ Mod: No valid player found for The Horde..";
 		};

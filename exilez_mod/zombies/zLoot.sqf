@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Useful = 
+EZM_Useful = 
 {
 	_return = selectRandom [
 	
@@ -20,7 +20,7 @@ Useful =
 	_return;
 };
 	
-DocAnd9mm = 
+EZM_DocAnd9mm = 
 {
 	_return = selectRandom [
 	
@@ -31,7 +31,7 @@ DocAnd9mm =
 	_return;
 };
 
-DocAndAmmo = 
+EZM_DocAndAmmo = 
 {
 	_return = selectRandom [
 	"Exile_Item_InstaDoc",
@@ -85,7 +85,7 @@ DocAndAmmo =
 	_return;
 };
 	
-Nothing = 
+EZM_Nothing = 
 {
 	_return = "";
 	_return;

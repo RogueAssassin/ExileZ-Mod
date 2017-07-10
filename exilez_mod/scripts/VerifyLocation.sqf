@@ -39,7 +39,7 @@ if (_validLocation) then
 // Check for Blacklisted Areas
 if (_validLocation) then 
 {
-	if (UseAreaBlackList) then
+	if (EZM_UseAreaBlackList) then
 	{
 		{
 			if (_position distance (_x select 0) <= _x select 1) then
@@ -47,14 +47,14 @@ if (_validLocation) then
 				_validLocation = false
 			};
 		}
-		forEach BlackListedPositions;
+		forEach EZM_BlackListedPositions;
 	};
 };
 
 // Check for SafeZones
 if (_validLocation) then 
 {
-	if (RemoveZfromTraders) then
+	if (EZM_RemoveZfromTraders) then
 	{
 		if ((_position) call ExileClient_util_world_isInTraderZone) then
 		{
@@ -66,7 +66,7 @@ if (_validLocation) then
 // Check for Flags
 if (_validLocation) then 
 {
-	if (RemoveZfromTerritory) then
+	if (EZM_RemoveZfromTerritory) then
 	{
 		if ((_position) call ExileClient_util_world_isInTerritory) then
 		{
@@ -78,7 +78,7 @@ if (_validLocation) then
 // Check for players too close
 if (_validLocation && !_ignorePlayer) then 
 {
-	if ({isplayer _x} count (_position nearEntities MinSpawnDistance) == 1) then
+	if ({isplayer _x} count (_position nearEntities EZM_MinSpawnDistance) == 1) then
 	{
 		_validLocation = false;
 	};
@@ -87,7 +87,7 @@ if (_validLocation && !_ignorePlayer) then
 // Check for absence of players near
 if (_validLocation && !_ignorePlayer) then 
 {
-	if ({isplayer _x} count (_position nearEntities MaxSpawnDistance) == 0) then
+	if ({isplayer _x} count (_position nearEntities EZM_MaxSpawnDistance) == 0) then
 	{
 		_validLocation = false;
 	};

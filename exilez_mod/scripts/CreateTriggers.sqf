@@ -35,8 +35,8 @@ _validLocation = false;
 if (_missionLRadius > 0) then {
 	while {!_validLocation} do 
 	{
-		_tempTriggerPosition = [_triggerPosition,0,_missionLRadius] call GetRandomLocation;
-		_validLocation = [_tempTriggerPosition,true] call VerifyLocation;
+		_tempTriggerPosition = [_triggerPosition,0,_missionLRadius] call EZM_GetRandomLocation;
+		_validLocation = [_tempTriggerPosition,true] call EZM_VerifyLocation;
 		sleep 0.05;
 	};
 	_triggerPosition = _tempTriggerPosition;
@@ -76,7 +76,7 @@ if (_showTriggerOnMap) then {
 };
 
 
-if (Debug) then
+if (EZM_Debug) then
 {
 	diag_log format["ExileZ Mod: Creating Trigger	|	Position : %1 	|	Radius : %2m	|	Near : %3 ",_triggerPosition,_triggerRadius,_nearestLocation];
 };
@@ -94,11 +94,13 @@ _trigger setvariable ["respawnDelay",_respawnDelay, False];
 
 
 // Spawn Mission sqf
-if !(isnil "_mission") then {
+if !(isnil "_mission") then
+{
 	nul = [] spawn _mission;
 };
 
 // Spawn loot box
-if !(isnil "_lootBox") then {
+if !(isnil "_lootBox") then
+{
 	nul = [_triggerPosition] spawn _lootBox;
 };

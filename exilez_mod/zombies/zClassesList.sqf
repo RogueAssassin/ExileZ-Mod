@@ -5,7 +5,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 */
 
 /* Fast Civilians		*/ 
-fastCivilians = [
+EZM_fastCivilians = [
 	["RyanZombieC_man_1"],
 	["RyanZombieC_man_polo_1_F"],
 	["RyanZombieC_man_polo_2_F"],
@@ -40,8 +40,8 @@ fastCivilians = [
 	["RyanZombie32"]
 ];
 
-/* Fast Soldiers 		*/ 
-fastSoldiers = [
+/* Fast Soldiers 		*/
+EZM_fastSoldiers = [
 	["RyanZombieB_Soldier_02_f"],
 	["RyanZombieB_Soldier_02_f_1"],
 	["RyanZombieB_Soldier_02_f_1_1"],
@@ -56,7 +56,7 @@ fastSoldiers = [
 ];
 
 /* Medium Civilians		*/ 
-mediumCivilians = [
+EZM_mediumCivilians = [
 	["RyanZombieC_man_1medium"],
 	["RyanZombieC_man_polo_1_Fmedium"],
 	["RyanZombieC_man_polo_2_Fmedium"],
@@ -92,7 +92,7 @@ mediumCivilians = [
 ];
 
 /* Medium Soldiers		*/ 
-mediumSoldiers = [
+EZM_mediumSoldiers = [
 	["RyanZombieB_Soldier_02_fmedium"],
 	["RyanZombieB_Soldier_02_f_1medium"],
 	["RyanZombieB_Soldier_02_f_1_1medium"],
@@ -107,7 +107,7 @@ mediumSoldiers = [
 ];
 
 /* Slow Civilian		*/ 
-slowCivilians = [
+EZM_slowCivilians = [
 	["RyanZombieC_man_1slow"],
 	["RyanZombieC_man_polo_1_Fslow"],
 	["RyanZombieC_man_polo_2_Fslow"],
@@ -143,7 +143,7 @@ slowCivilians = [
 ];
 
 /* Slow Soldiers		*/ 
-slowSoldiers = [
+EZM_slowSoldiers = [
 	["RyanZombieB_Soldier_02_fslow"],
 	["RyanZombieB_Soldier_02_f_1slow"],
 	["RyanZombieB_Soldier_02_f_1_1slow"],
@@ -158,7 +158,7 @@ slowSoldiers = [
 ];
 
 /* Walkers Civilians	*/ 
-walkerCivilians = [
+EZM_walkerCivilians = [
 	["RyanZombieC_man_1Walker"],
 	["RyanZombieC_man_polo_1_FWalker"],
 	["RyanZombieC_man_polo_2_FWalker"],
@@ -194,7 +194,7 @@ walkerCivilians = [
 ];
 
 /* Walkers Soldiers		*/ 
-walkerSoldiers = [
+EZM_walkerSoldiers = [
 	["RyanZombieB_Soldier_02_fWalker"],
 	["RyanZombieB_Soldier_02_f_1Walker"],
 	["RyanZombieB_Soldier_02_f_1_1Walker"],
@@ -209,7 +209,7 @@ walkerSoldiers = [
 ];
 
 /* Demons				*/ 
-boss = [
+EZM_boss = [
 	["RyanZombieboss1"],
 	["RyanZombieboss2"],
 	["RyanZombieboss3"],
@@ -245,7 +245,7 @@ boss = [
 ];
 
 /* Spider Zombies		*/ 
-spiders = [
+EZM_spiders = [
 	["RyanZombieSpider1"],
 	["RyanZombieSpider2"],
 	["RyanZombieSpider3"],
@@ -281,7 +281,7 @@ spiders = [
 ];
 
 /* Brittle Crawlers		*/ 
-crawlers = [
+EZM_crawlers = [
 	["RyanZombieCrawler1"],
 	["RyanZombieCrawler2"],
 	["RyanZombieCrawler3"],

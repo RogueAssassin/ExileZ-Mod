@@ -18,24 +18,24 @@ _safetoblow				= true;
 _explode				= false;
 
 //Parameters
-_zombieMoney			= ZombieMoney;				//default = 5;	// Money per zombie kill
-_zombieRespect			= ZombieRespect;			//default = 10;	// Respect per zombie kill
-_roadKillBonus			= RoadKillBonus;			//default = -5;	// Bonus Respect if roadkill
-_minDistance			= MinDistance;				//default = 50;	// Minimal distance for range bonus
-_cqbDistance			= CqbDistance;				//default = 10;	// Minimal ditance for close quarter bonus
-_cqbBonus				= CqbBonus;					//default = 40;	// Respect for close quarter bonus at 1 meter
-_distanceBonusDivider 	= DistanceBonusDivider;		//default = 10;	// Distance divided by that number = respect E.G. 300m / [20] = 15 Respect
+_zombieMoney			= EZM_ZombieMoney;				//default = 5;	// Money per zombie kill
+_zombieRespect			= EZM_ZombieRespect;			//default = 10;	// Respect per zombie kill
+_roadKillBonus			= EZM_RoadKillBonus;			//default = -5;	// Bonus Respect if roadkill
+_minDistance			= EZM_MinDistance;				//default = 50;	// Minimal distance for range bonus
+_cqbDistance			= EZM_CqbDistance;				//default = 10;	// Minimal ditance for close quarter bonus
+_cqbBonus				= EZM_CqbBonus;					//default = 40;	// Respect for close quarter bonus at 1 meter
+_distanceBonusDivider 	= EZM_DistanceBonusDivider;		//default = 10;	// Distance divided by that number = respect E.G. 300m / [20] = 15 Respect
 //
-_maxMoneyOnZed			= ZombieMaxMoney;		//default = 15; // Max Money per zombie kill will be random
+_maxMoneyOnZed			= EZM_ZombieMaxMoney;		//default = 15; // Max Money per zombie kill will be random
 
 _killMsg = selectRandom ["ZOMBIE WACKED","ZOMBIE CLIPPED","ZOMBIE DISABLED","ZOMBIE DISQUALIFIED","ZOMBIE WIPED","ZOMBIE WIPED","ZOMBIE ERASED","ZOMBIE LYNCHED","ZOMBIE WRECKED","ZOMBIE NEUTRALIZED","ZOMBIE SNUFFED","ZOMBIE WASTED","ZOMBIE ZAPPED"];
 _killMsgRoad = selectRandom ["ZOMBIE ROADKILL","ZOMBIE SMASHED","ERMAHGERD ROADKILL"];
 
-if (ExplosiveZombies) then 
+if (EZM_ExplosiveZombies) then 
 {
-	if (ExplosiveZombiesRatio > random 100) then
+	if (EZM_ExplosiveZombiesRatio > random 100) then
 	{	
-		_killerRespectPoints pushBack [(format ["%1",ExplosiveZombieWarning]), ExplosiveRespect];
+		_killerRespectPoints pushBack [(format ["%1",EZM_ExplosiveZombieWarning]), EZM_ExplosiveRespect];
 		_explode = true;
 	};
 };
@@ -46,7 +46,7 @@ EZM_aliveZombies = EZM_aliveZombies - [_unit];
 // Add to Dead Zombie Monitor
 EZM_deadZombies pushback _unit;
 
-if (ExtendedLogging) then
+if (EZM_ExtendedLogging) then
 {
 	diag_log format["ExileZ Mod: Zombie killed by %1", name _killer];
 };
@@ -106,19 +106,19 @@ if ((!isNull _playerObj) && {((getPlayerUID _playerObj) != "") && {_playerObj is
 	_respect = (_respect + _respectChange);
 	_money = (_money + _zombieMoney);
 	
-	if (EnableMoneyOnPlayer) then 
+	if (EZM_EnableMoneyOnPlayer) then 
 	{
 		[_playerObj, "moneyReceivedRequest", [str _money, "Killing Zombies"]] call ExileServer_system_network_send_to;
 		_playerObj setVariable ["ExileMoney", _money, true];
 	};
 	
-	if (EnableMoneyOnCorpse) then 
+	if (EZM_EnableMoneyOnCorpse) then 
 	{
 		_zedMoney = random(_maxMoneyOnZed);
 		_unit setVariable ["ExileMoney", round(_zedMoney), true];
 	};
 	
-	if (EnableRespectOnKill) then
+	if (EZM_EnableRespectOnKill) then
 	{
 		[_playerObj, "showFragRequest", [_killerRespectPoints]] call ExileServer_system_network_send_to;
 		_playerObj setVariable ["ExileScore", _respect];
@@ -128,7 +128,7 @@ if ((!isNull _playerObj) && {((getPlayerUID _playerObj) != "") && {_playerObj is
 		ExileClientPlayerScore = nil;
 	};
 	
-	if (EnableZombieStatKill) then
+	if (EZM_EnableZombieStatKill) then
 	{
 		_newKillerFrags = _killer getVariable ["ExileZedKills", 0];
 		_newKillerFrags = _newKillerFrags + 1;
@@ -139,7 +139,7 @@ if ((!isNull _playerObj) && {((getPlayerUID _playerObj) != "") && {_playerObj is
 		ExileClientPlayerZedKills = nil;
 	};
 	
-	if (EnableStatKill) then
+	if (EZM_EnableStatKill) then
 	{			
 		_newKillerFrags = _killer getVariable ["ExileKills", 0];
 		_newKillerFrags = _newKillerFrags + 1;
@@ -150,7 +150,7 @@ if ((!isNull _playerObj) && {((getPlayerUID _playerObj) != "") && {_playerObj is
 		ExileClientPlayerKills = nil;
 	};
 
-	if (EnableRankChange) then
+	if (EZM_EnableRankChange) then
 	{
 		_newKillerRank = _killer getVariable ["ExileRank", 0];
 		_killer setVariable ["ExileRank", (_newKillerRank+_zombieRankChange)];
@@ -160,7 +160,7 @@ if ((!isNull _playerObj) && {((getPlayerUID _playerObj) != "") && {_playerObj is
 		ExileClientPlayerRank = nil;
 	};
 	
-	if (EnableHumanityChange) then
+	if (EZM_EnableHumanityChange) then
 	{
 		_newKillerRank = _killer getVariable ["ExileHumanity", 0];
 		_killer setVariable ["ExileHumanity", (_newKillerRank+_zombieRankChange)];
@@ -183,8 +183,8 @@ if(_explode) then
 		[_unit] spawn
 		{
 			private _unit = _this select 0;
-			sleep ExplosionDelay;
-			ExplosiveType createvehicle position _unit;
+			sleep EZM_ExplosionDelay;
+			EZM_ExplosiveType createvehicle position _unit;
 		};
 	};
 };

@@ -4,12 +4,12 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Military = [         
+EZM_Military = [         
     [4150,6650,200],  // Serja Army Base
     [3555,6662,200]   // Southern Army Base
 ];          
 
-Cities = [              
+EZM_Cities = [              
     [6721,11179,300], // Vorkuta
     [8247,10749,300], // Jalovisko
     [4829,10836,200], // Nothern Army Base

@@ -26,7 +26,7 @@ _zombieGroup = _triggerObj getvariable ["zombieGroup", nil];
 _spawnDelay = _triggerObj getvariable ["spawnDelay", 15];
 _respawnDelay = _triggerObj getvariable ["respawnDelay",45];
 
-if (Debug) then
+if (EZM_Debug) then
 {
 	diag_log format["ExileZ Mod: TriggerLoop: Group : %1 | Size : %2 | Vest : %3 | Loot : %4 | ZGroup : %5 | SDelay : %6 | RSDelay : %7",_group,_groupSize,_vestGroup,_lootGroup,_zombieGroup,_spawnDelay,_respawnDelay];
 };
@@ -37,13 +37,13 @@ _triggerPosition = (getpos (_triggerObj));
 _nearestLocation = text nearestLocation [_triggerPosition, ""];
 
 
-if (Debug) then
+if (EZM_Debug) then
 {
 	diag_log format["ExileZ Mod: Activating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation];
 };
 
 //Select a random player and spawn a zombie near him
-SpawnOne = {
+EZM_SpawnOne = {
 	_triggerList = list _triggerObj;
 	if !(count _triggerList == 0) then 
 	{
@@ -51,13 +51,13 @@ SpawnOne = {
 		_playerPos = getPos _playerObj;
 		
 		// Max Zombies reached?
-		if ((count EZM_aliveZombies) <= MaxZombies) then
+		if ((count EZM_aliveZombies) <= EZM_MaxZombies) then
 		{
-			nul = [_group,_playerPos,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+			nul = [_group,_playerPos,_vestGroup,_lootGroup,_zombieGroup] spawn EZM_SpawnZombie;
 		}
 		else
 		{
-			if (ExtendedLogging) then
+			if (EZM_ExtendedLogging) then
 			{
 				diag_log "ExileZ Mod: Maximum Zombies reached for now!";
 			};
@@ -71,7 +71,7 @@ while {triggeractivated (_this select 0)} do
 {
 	if (isNull _group) then 
 	{ 															//the zombie group is empty or all dead
-		_group = [_triggerObj] call InitGroup;					//Create Group
+		_group = [_triggerObj] call EZM_InitGroup;					//Create Group
 		if (_newAct) then 
 		{ 														//if newAct is true The zombies were deleted not killed
 			for "_x" from 1 to _groupSize do 
@@ -80,10 +80,10 @@ while {triggeractivated (_this select 0)} do
 				{												//player check
 					if (isNull _group) then 
 					{ 											//the zombie group is empty or all dead
-						_group = [_triggerObj] call InitGroup;
+						_group = [_triggerObj] call EZM_InitGroup;
 						sleep 1;
 					};
-					call SpawnOne;
+					call EZM_SpawnOne;
 				};
 				sleep _SpawnDelay;								//spawn delay
 			};
@@ -91,7 +91,7 @@ while {triggeractivated (_this select 0)} do
 		} 
 		else 													//player probably killed all the zombies without leaving the zone
 		{
-			call SpawnOne;
+			call EZM_SpawnOne;
 			sleep _RespawnDelay; 								//Wait respawn time
 		};
 	}
@@ -100,16 +100,16 @@ while {triggeractivated (_this select 0)} do
 		_cnt = {alive _x} count units _group; 					//count number of zombie alive in the group
 		_triggerList = list _triggerObj;
 		_playersInZone = count _triggerList;
-		_scaledGroupSize = _groupSize + (_groupSize * TriggerGroupScaling * _playersInZone);
+		_scaledGroupSize = _groupSize + (_groupSize * EZM_TriggerGroupScaling * _playersInZone);
 		if (_cnt < _scaledGroupSize) then 
 		{
-			call SpawnOne;
+			call EZM_SpawnOne;
 		};
 		sleep _RespawnDelay; 									//Wait respawn time
 	};
 };
 //Reboot the trigger
-if (Debug) then
+if (EZM_Debug) then
 {
 	diag_log format["ExileZ Mod: Deactivating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation];
 };

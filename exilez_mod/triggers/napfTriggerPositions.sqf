@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Cities = [			 //Trigger_1
+EZM_Cities = [			 //Trigger_1
 [7467.08,14261.2,100], //Trueb
 [6002.88,13476,100], //Neue Welt
 [4054.72,14484.9,100], //Bubendorf
@@ -55,26 +55,26 @@ Cities = [			 //Trigger_1
 [1263.99,3205.85,50] //Island Bernerplatte
 ];
 
-Military = [		//Trigger_2
+EZM_Military = [		//Trigger_2
 [18311.3,2210.95,50] //South Airstrip
 ];                     
 
-NoBuildings = [       //Trigger_3
+EZM_NoBuildings = [       //Trigger_3
 [5101.83,3780.77,50], //AF Forest 1
 [4337.49,2922.17,50], //AF Forest 2
 [5229.34,2401.76,50], //AF Forest 3
 [18324.5,5276.86,50] //Giswil
 ]; 
 
-NoMansLand = [        	//Trigger_4
+EZM_NoMansLand = [        	//Trigger_4
 [18325,2219.02,700]     // SE No Man's Land (Contaminated Zone)
 ];                      
 
-Mission = [             //Trigger_5
+EZM_Mission = [             //Trigger_5
 [18061.6,18699.4,700]   // NE Island Mission (Contaminated Zone)
 ];
 
-Marines = [				//Trigger_6
+EZM_Marines = [				//Trigger_6
 [4932.01,11742.3,100], //MuttenzerKurve
 [7285.61,16817.4,100], //Aarenbucht
 [11032.4,16433.6,100], //Siechwasser
@@ -86,7 +86,7 @@ Marines = [				//Trigger_6
 [17218.1,3575.03,50] //Castle Froburg
 ];
 
-Farms = [				//Trigger_7
+EZM_Farms = [				//Trigger_7
 [7634.35,11798.1,50], //HofHorn
 [8688.65,9859.1,50], //Elbishof
 [10458.9,9335.48,50], //Rossbode
@@ -98,7 +98,7 @@ Farms = [				//Trigger_7
 [18628.2,9435.52,50] //Alpnach
 ];
 
-Berg = [ 				//Trigger_8
+EZM_Berg = [ 				//Trigger_8
 [11080.8,11791.7,100], //Napf
 [9000.58,7573.98,100], //Ramsehoger
 [4974.94,9265.07,100], //Blasflue
@@ -110,12 +110,12 @@ Berg = [ 				//Trigger_8
 [13710.9,4177.55,100] //Rothorn
 ]; 	
 
-Airports = [ 		//Trigger_9
+EZM_Airports = [ 		//Trigger_9
 [14534.1,16865,50], //Airport Luzern
 [4670.9,4540.43,200] //Airbase
 ];
 
-MainCitiesOnly = [  	//Trigger_10            
+EZM_MainCitiesOnly = [  	//Trigger_10            
 [8939.89,16099.4,200], //Lenzburg
 [5901.15,15438.5,100], //Seltisberg
 [4602.19,12298.9,100], //Huttwil

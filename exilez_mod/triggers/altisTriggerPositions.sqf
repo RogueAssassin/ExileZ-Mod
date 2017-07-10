@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Military = [         
+EZM_Military = [         
 [16084,16985,180],      // Telos Military
 [17432,13160,150],      // Pyrgos Military
 [21015,7317,300],       // Selakano Airfield
@@ -14,21 +14,21 @@ Military = [
 [12722,16512,400]       // Lakka Military
 ];                      
                         
-NoBuildings = [         
+EZM_NoBuildings = [         
 [21033,14754,550],      // Big swamp
 [8426,25077,600],       // Atsalis Island
 [13457,12029,600]       // Maknysinsi Island
 ];                     
                         
-NoMansLand = [        
+EZM_NoMansLand = [        
 [11288,7743,3200]       // No man's land
 ];                      
                         
-Mission = [             
+EZM_Mission = [             
 [11205,8717,150]        // Mission
 ];
 
-Cities = [              
+EZM_Cities = [              
 [16804,12684,300],      // Pyrgos   
 [14016,18644,300],      // Athira
 [12524,14334,300],      // Neochori
@@ -87,7 +87,7 @@ Cities = [
 [27002,23215,300]       // Molos
 ];                      
                         
-MainCitiesOnly = [              
+EZM_MainCitiesOnly = [              
 [16804,12684,300],      // Pyrgos   
 [14016,18644,300],      // Athira
 [12524,14334,300],      // Neochori

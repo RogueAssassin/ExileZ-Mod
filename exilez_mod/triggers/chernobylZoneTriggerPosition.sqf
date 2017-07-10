@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Military = [         
+EZM_Military = [         
 [3882.14,16639.7,230.938],	// JupiterFactory,
 [8243.5,16980.2,157.079],	// PodlesnyNuclearWasteStorage
 [3609.8,18015.3,189.875],	// Greenhouses
@@ -24,18 +24,18 @@ Military = [
 [5491.6,17115.5,50]		// Schoo1
 ];                      
                         
-NoBuildings = [         
+EZM_NoBuildings = [         
 [7827.8,17865.8,50],		// Haven
 [6098.64,15122.3,214.133],	// Ruins1
 [6689.51,16758.4,153.619],	// Cementery
 [4759.48,17797.9,93.367]	// Staduim,
 ];                     
                         
-NoMansLand = [        
+EZM_NoMansLand = [        
 [5659.92,18433,369.867]		// No man's land (Contaminated Zone)
 ];                      
 
-Kitas = [
+EZM_Kitas = [
 [3348.73,17493.8,149.721],	// KitaGoldfish
 [3852.13,17788.2,234.917],	// KitaChild
 [4751.03,16861.5,50],		// KitaGoldKey
@@ -51,7 +51,7 @@ Kitas = [
 [4897.26,18262.7,50]		// KitaAppletree
 ];                      
                         
-MainCities = [              
+EZM_MainCities = [              
 [1687.77,18856.9,589.95],	// Novoshepelychi
 [5067.83,17167,117.438],	// Pripyat (MainPlaza)
 [5433.29,17387,122.994],	// Pripyat (MS_Cinema_Statue)

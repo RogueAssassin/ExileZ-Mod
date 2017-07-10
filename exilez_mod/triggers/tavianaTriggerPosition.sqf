@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Cities = [
+EZM_Cities = [
 [1071,17743,300],
 [1292,18091,300],
 [1453,17412,300],

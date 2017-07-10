@@ -5,57 +5,57 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 */
 
 // Logging Settings
-Debug							= false;			// debug messages.
-ExtendedLogging					= true;				// Slightly more information in logs.
+EZM_Debug							= false;			// debug messages.
+EZM_ExtendedLogging					= true;				// Slightly more information in logs.
 
 // Global Settings
-MaxZombies						= 100;				// How many Zombies overall?
-ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
-MinSpawnDistance				= 20;               // Closest distance from any player to spawn a zombie.
-MaxSpawnDistance				= 100;              // Max distance a zombie should spawn from a player.
-MaxDistance						= 300;              // Max distance to players before delete.
-MaxTime							= 30;               // Max time away from a player before delete.
-MaxTimeDead						= 300;				// Max time for a dead Zombie to stay before delete. (Default 5 minutes)
-RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. (the check is done every MaxTime)
-RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. (the check is done every MaxTime)
-TriggerGroupScaling				= 0;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
+EZM_MaxZombies						= 100;				// How many Zombies overall?
+EZM_ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
+EZM_MinSpawnDistance				= 20;               // Closest distance from any player to spawn a zombie.
+EZM_MaxSpawnDistance				= 100;              // Max distance a zombie should spawn from a player.
+EZM_MaxDistance						= 300;              // Max distance to players before delete.
+EZM_MaxTime							= 30;               // Max time away from a player before delete.
+EZM_MaxTimeDead						= 300;				// Max time for a dead Zombie to stay before delete. (Default 5 minutes)
+EZM_RemoveZfromTraders				= true;             // Will kill zombies when they get too close to a safezone. (the check is done every MaxTime)
+EZM_RemoveZfromTerritory			= true;             // Will kill zombies when they get too close to a flag. (the check is done every MaxTime)
+EZM_TriggerGroupScaling				= 0;             // 1 player = Groupsize, 2 player in trigger = Groupsize + (GroupSize * TriggerGroupScalling * number of player in the trigger) set at 0 to disable scaling
 
 // Night settings
-LightsOff						= true;             // Kill all the light on map except the player lights.           
-NightStartTime					= 18;               // Time at which it is night in hours
-NightEndTime					= 6;                // Time at which it is no longer night in hours
+EZM_LightsOff						= true;             // Kill all the light on map except the player lights.           
+EZM_NightStartTime					= 18;               // Time at which it is night in hours
+EZM_NightEndTime					= 6;                // Time at which it is no longer night in hours
 
 // Explosive zombies          
-ExplosiveZombies				= true;				// randomly boobie trapped zombies exploding a few seconds after dying.
-ExplosiveZombiesRatio			= 2;                // percentage of explosive zombies
-ExplosiveZombieWarning			= "IT'S A TRAP !!!";// Message that will display a few seconds before the explosion of a zombie.
-ExplosionDelay					= 3;                // self-explanatory
-ExplosiveType					= "Grenade";		// "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
-ExplosiveRespect				= 100;              // Bonus respect for Exploding zombies
+EZM_ExplosiveZombies				= true;				// randomly boobie trapped zombies exploding a few seconds after dying.
+EZM_ExplosiveZombiesRatio			= 2;                // percentage of explosive zombies
+EZM_ExplosiveZombieWarning			= "IT'S A TRAP !!!";// Message that will display a few seconds before the explosion of a zombie.
+EZM_ExplosionDelay					= 3;                // self-explanatory
+EZM_ExplosiveType					= "Grenade";		// "mini_Grenade" for small almost non-lethal explosion or "Grenade" Big and dangerous explosion.
+EZM_ExplosiveRespect				= 100;              // Bonus respect for Exploding zombies
 
 // Killing zombies settings
-EnableMoneyOnPlayer				= false;            // Money goes directly on killer
-EnableMoneyOnCorpse				= true;             // Money stays on corpse for looting
-ZombieMoney						= 5;                // Money per zombie kill
-ZombieMaxMoney					= 15;               // Max Money per zombie kill-random amount put on corpses
+EZM_EnableMoneyOnPlayer				= false;            // Money goes directly on killer
+EZM_EnableMoneyOnCorpse				= true;             // Money stays on corpse for looting
+EZM_ZombieMoney						= 5;                // Money per zombie kill
+EZM_ZombieMaxMoney					= 15;               // Max Money per zombie kill-random amount put on corpses
 
 // Stats settings
-EnableStatKill					= true;				// Enable stat tracking for Kills DB entry
-EnableZombieStatKill			= false;			// Enable stat tracking for ZedKills DB entry
-EnableRankChange				= false;			// Enable Rank change
-EnableHumanityChange			= false;			// Enable GR8's Humanity change
-ExileZombieKillRankChange		= 5;				// Both Rank and Humanity are dependant on this config
+EZM_EnableStatKill					= false;				// Enable stat tracking for Kills DB entry
+EZM_EnableZombieStatKill			= false;			// Enable stat tracking for ZedKills DB entry
+EZM_EnableRankChange				= false;			// Enable Rank change
+EZM_EnableHumanityChange			= false;			// Enable GR8's Humanity change
+EZM_ExileZombieKillRankChange		= 5;				// Both Rank and Humanity are dependant on this config
 
 // Respect settings
-EnableRespectOnKill				= true;				// Self Explanatory
-ZombieRespect					= 10;				// Respect per zombie kill
+EZM_EnableRespectOnKill				= true;				// Self Explanatory
+EZM_ZombieRespect					= 10;				// Respect per zombie kill
 
 // Frag settings
-RoadKillBonus					= 10;				// Bonus Respect if roadkill
-MinDistance						= 50;				// Minimal distance for range bonus
-CqbDistance						= 10;				// Minimal ditance for close quarter bonus
-CqbBonus						= 40;				// Respect for close quarter bonus at 1 meter
-DistanceBonusDivider			= 10;				// Distance divided by that number = respect E.G. 300m / [20] = 15 Respect
+EZM_RoadKillBonus					= 10;				// Bonus Respect if roadkill
+EZM_MinDistance						= 50;				// Minimal distance for range bonus
+EZM_CqbDistance						= 10;				// Minimal ditance for close quarter bonus
+EZM_CqbBonus						= 40;				// Respect for close quarter bonus at 1 meter
+EZM_DistanceBonusDivider			= 10;				// Distance divided by that number = respect E.G. 300m / [20] = 15 Respect
 
 // Zombie settings : SET TO -1 TO DISABLE AND USE DEFAULT FROM RYANZOMBIES
 EZM_ryanzombieshealth			          = 0.8; 	 // Health, *(initial damage level 0 is no damage 1 is dead)
@@ -117,31 +117,31 @@ EZM_ryanzombiesmovementspeedspider        = 1;      // Animation speed for spide
 EZM_ryanzombiesmovementspeedcrawler       = 1;      // Animation speed for crawler
 
 // Harassing Zombies Config
-UseHarassingZombies						= true;		// Spawn harassing zombies around the player.
-HarassingZedChance						= 100;		// Percent chance per player for a harassing Zed to spawn on them
-HarassingZombieAtNightOnly				= false;	// Spawn harassing zombies at night only.
-HarassingLoopTime						= 180;		// Check for players to harass every X seconds (Default 180 seconds)
-HarassingConfig = [
+EZM_UseHarassingZombies						= true;		// Spawn harassing zombies around the player.
+EZM_HarassingZedChance						= 100;		// Percent chance per player for a harassing Zed to spawn on them
+EZM_HarassingZombieAtNightOnly				= false;	// Spawn harassing zombies at night only.
+EZM_HarassingLoopTime						= 180;		// Check for players to harass every X seconds (Default 180 seconds)
+EZM_HarassingConfig = [
 /* 0 Groups Size  */         2,						// maximum number of zombies around a player
-/* 1 Vest group */           Nothing,				// Vest function defined in ZVest.sqf
-/* 2 Loot group */           Nothing,				// Loot function defined in ZLoot.sqf
-/* 3 Zombie group */         Easy					// Group function defined in ZClasses.sqf
+/* 1 Vest group */           EZM_Nothing,				// Vest function defined in ZVest.sqf
+/* 2 Loot group */           EZM_Nothing,				// Loot function defined in ZLoot.sqf
+/* 3 Zombie group */         EZM_Easy					// Group function defined in ZClasses.sqf
 ];
 
 // Hordes Config
-UseHorde								= true;		// Use the horde spawner  
-HordeLoopTime							= 30;		// Spawn a Horde every X Minutes. (Default 30 mins)
-HordeConfig = [
+EZM_UseHorde								= true;		// Use the horde spawner  
+EZM_HordeLoopTime							= 30;		// Spawn a Horde every X Minutes. (Default 30 mins)
+EZM_HordeConfig = [
 /* 0 Groups Size  */         15,					// maximum number of zombies around a player
-/* 1 Vest group */           Basic,					// Vest function defined in ZVest.sqf
-/* 2 Loot group */           DocAndAmmo,			// Loot function defined in ZLoot.sqf
-/* 3 Zombie group */         MediumMix,				// Group function defined in ZClasses.sqf
+/* 1 Vest group */           EZM_Basic,					// Vest function defined in ZVest.sqf
+/* 2 Loot group */           EZM_DocAndAmmo,			// Loot function defined in ZLoot.sqf
+/* 3 Zombie group */         EZM_MediumMix,				// Group function defined in ZClasses.sqf
 /* 4 Horde density */        25						// Radius in which the zombies will spawn should be lower than Min Spawn Distance.
 ];
 
 // Blacklisted Areas
-UseAreaBlackList = false;
-BlackListedPositions =
+EZM_UseAreaBlackList = false;
+EZM_BlackListedPositions =
 [
 	//[[CoordinatesX,CoordinatesY],Radius] // Example
 	[[14599,16797],175],
@@ -150,7 +150,7 @@ BlackListedPositions =
 ];
 
 // Use Map Triggers as well as Hordes and Harassing Zombies?
-UseTriggers                  = true;
+EZM_UseTriggers                  = true;
 
 // Check Config Compiled
 EZM_CompiledOkay				= true;

@@ -276,31 +276,31 @@ if (EZM_ryanzombiesmovementspeedcrawler >= 0) then
 };
 
 // CompileFinal Files
-CreateTriggers = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\CreateTriggers.sqf";
-TriggerLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\TriggerLoop.sqf";
-InitGroup = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\InitGroup.sqf";
-SpawnZombie = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\SpawnZombie.sqf";
-ZMPKilled = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\MPKilled.sqf";
-GetRandomLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\GetRandomLocation.sqf";
-VerifyLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\VerifyLocation.sqf";
-TurnTheLightsOff = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\LightsOff.sqf";
+EZM_CreateTriggers = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\CreateTriggers.sqf";
+EZM_TriggerLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\TriggerLoop.sqf";
+EZM_InitGroup = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\InitGroup.sqf";
+EZM_SpawnZombie = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\SpawnZombie.sqf";
+EZM_ZMPKilled = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\MPKilled.sqf";
+EZM_GetRandomLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\GetRandomLocation.sqf";
+EZM_VerifyLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\VerifyLocation.sqf";
+EZM_TurnTheLightsOff = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\LightsOff.sqf";
 
 // Compile the Zombie Monitor
-ZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieMonitor.sqf";
+EZM_ZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieMonitor.sqf";
 
 // Compile the Dead Zombie Monitor
-DeadZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\DeadZombieMonitor.sqf";
+EZM_DeadZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\DeadZombieMonitor.sqf";
 
 // Compile the Harassing Zombies Loop
-HarassingZombiesThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HarassingZombiesThread.sqf";
+EZM_HarassingZombiesThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HarassingZombiesThread.sqf";
 
 // Compile the Horde Loop
-HordeThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HordeThread.sqf";
+EZM_HordeThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HordeThread.sqf";
 
 // Add Zombie Monitor to ExileServer Thread
-if (Debug) then
+if (EZM_Debug) then
 {
-	[MaxTime/2, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
+	[EZM_MaxTime/2, EZM_ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
 	diag_log "---------------------------------------------------------------------";
 	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Debug Zombie Monitor to ExileServer Thread";
@@ -309,7 +309,7 @@ if (Debug) then
 }
 else
 {
-	[MaxTime, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
+	[EZM_MaxTime, EZM_ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
 	diag_log "---------------------------------------------------------------------";
 	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Zombie Monitor to ExileServer Thread";
@@ -318,9 +318,9 @@ else
 };
 
 // Add Dead Zombie Monitor to ExileServer Thread
-if (Debug) then
+if (EZM_Debug) then
 {
-	[MaxTimeDead/4, DeadZombieMonitor, [], true] call ExileServer_system_thread_addTask;
+	[EZM_MaxTimeDead/4, EZM_DeadZombieMonitor, [], true] call ExileServer_system_thread_addTask;
 	diag_log "---------------------------------------------------------------------";
 	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Debug Dead Zombie Monitor to ExileServer Thread";
@@ -329,7 +329,7 @@ if (Debug) then
 }
 else
 {
-	[MaxTimeDead, DeadZombieMonitor, [], true] call ExileServer_system_thread_addTask;
+	[EZM_MaxTimeDead, EZM_DeadZombieMonitor, [], true] call ExileServer_system_thread_addTask;
 	diag_log "---------------------------------------------------------------------";
 	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Dead Zombie Monitor to ExileServer Thread";
@@ -338,11 +338,11 @@ else
 };
 
 // Add Harassing Zombies Loop to ExileServer Thread
-if (UseHarassingZombies) then
+if (EZM_UseHarassingZombies) then
 {
 	if (Debug) then
 	{
-		[HarassingLoopTime/2, HarassingZombiesThread, [HarassingConfig], true] call ExileServer_system_thread_addTask;
+		[EZM_HarassingLoopTime/2, EZM_HarassingZombiesThread, [EZM_HarassingConfig], true] call ExileServer_system_thread_addTask;
 		diag_log "---------------------------------------------------------------------";
 		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Debug Harassing Zombies Loop to ExileServer Thread";
@@ -351,7 +351,7 @@ if (UseHarassingZombies) then
 	}
 	else
 	{
-		[HarassingLoopTime, HarassingZombiesThread, [HarassingConfig], true] call ExileServer_system_thread_addTask;
+		[EZM_HarassingLoopTime, EZM_HarassingZombiesThread, [EZM_HarassingConfig], true] call ExileServer_system_thread_addTask;
 		diag_log "---------------------------------------------------------------------";
 		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Harassing Zombies Loop to ExileServer Thread";
@@ -361,11 +361,11 @@ if (UseHarassingZombies) then
 };
 
 // Add Horde Loop to ExileServer Thread
-if (UseHorde) then
+if (EZM_UseHorde) then
 {
-	if (Debug) then
+	if (EZM_Debug) then
 	{
-		[HordeLoopTime*15, HordeThread, [HordeConfig], true] call ExileServer_system_thread_addTask;
+		[EZM_HordeLoopTime*15, EZM_HordeThread, [EZM_HordeConfig], true] call ExileServer_system_thread_addTask;
 		diag_log "---------------------------------------------------------------------";
 		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Debug Horde Loop to ExileServer Thread";
@@ -374,7 +374,7 @@ if (UseHorde) then
 	}
 	else
 	{
-		[HordeLoopTime*60, HordeThread, [HordeConfig], true] call ExileServer_system_thread_addTask;
+		[EZM_HordeLoopTime*60, EZM_HordeThread, [EZM_HordeConfig], true] call ExileServer_system_thread_addTask;
 		diag_log "---------------------------------------------------------------------";
 		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Horde Loop to ExileServer Thread";
@@ -384,7 +384,7 @@ if (UseHorde) then
 };
 
 //Create Triggers
-if (UseTriggers) then
+if (EZM_UseTriggers) then
 {
 	{
 		_useThisTrigger = _x select 0;
@@ -395,14 +395,14 @@ if (UseTriggers) then
 			//Weight Zombie Group
 			_currentTrigger = _x;
 			_zgroup = _currentTrigger select 13;
-			if (Debug) then
+			if (EZM_Debug) then
 			{
 				diag_log format["ExileZ Mod: Compounding Zombie Group Weight, Selected Group Trigger Index : %1",_forEachIndex];
 			};
 			_count = 0;
 			{
 				_count = _count + (_x select 1);
-				if (Debug) then
+				if (EZM_Debug) then
 				{
 					diag_log format["ExileZ Mod: Zombie Type Index : %1		Weight : %2		Compound Weight Value : 	%3",_forEachIndex,_x select 1,_count];
 				};
@@ -410,16 +410,17 @@ if (UseTriggers) then
 			}foreach (_zgroup);
 
 			//Create triggers
-			{nul = [_x,_CurrentTrigger] spawn CreateTriggers;
+			{
+				nul = [_x,_CurrentTrigger] spawn EZM_CreateTriggers;
 				sleep 0.01;
 			}foreach (_triggerPositions);
 		};
-	}foreach Triggers;
+	}foreach EZM_Triggers;
 };
 
-if (LightsOff) then
+if (EZM_LightsOff) then
 {
-	 [] call TurnTheLightsOff;
+	 [] call EZM_TurnTheLightsOff;
 };
 
 sleep 1;

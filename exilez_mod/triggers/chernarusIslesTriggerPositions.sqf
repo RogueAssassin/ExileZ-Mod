@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Military = [         
+EZM_Military = [         
 [4298.18,10677.1,400], //NWA North
 [4517.72,10279.4,400], //NWA Central
 [4784.56,9867.63,400], //NWA South
@@ -20,22 +20,22 @@ Military = [
 [12706.5,1480.76,425] //Utes Airfield
 ];                      
                         
-NoBuildings = [         
+EZM_NoBuildings = [         
 [10274.2,12047.9,300], //Black Mountain
 [11247.7,4282.75,300], //Rog
 [6896.64,11437.2,300], //Devils Castle
 [6536.29,5594.81,300] //Zub
 ];                  
                         
-NoMansLand = [        
+EZM_NoMansLand = [        
 [4504,10333,150]       // No man's land
 ];                      
                         
-Mission = [             
+EZM_Mission = [             
 [4504,10333,150]        // Mission
 ];
 
-Cities = [
+EZM_Cities = [
 [1909.46,2245.71,300], //Kamenka
 [3642.42,2472.86,300], //Komorovo
 [4499.99,2454.42,300], //Balota
@@ -108,7 +108,7 @@ Cities = [
 [13405.8,1421.19,50] //Utes Town
 ];                      
                         
-MainCitiesOnly = [              
+EZM_MainCitiesOnly = [              
 [1909.46,2245.71,300], //Kamenka
 [3642.42,2472.86,300], //Komorovo
 [4499.99,2454.42,300], //Balota

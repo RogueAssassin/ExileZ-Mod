@@ -4,7 +4,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Basic =
+EZM_Basic =
 {
 	_return = selectRandom [
 
@@ -28,7 +28,7 @@ Basic =
 	_return;
 };
 
-VeryBasic = 
+EZM_VeryBasic = 
 {
 	_return = selectRandom [
 
@@ -43,7 +43,7 @@ VeryBasic =
 	_return;
 };
 
-Nothing =
+EZM_Nothing =
 {
 	_return = "";
 	_return;

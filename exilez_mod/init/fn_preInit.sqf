@@ -88,8 +88,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\defaultTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\defaultZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\defaultZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\defaultTriggerSettings.sqf";
@@ -101,8 +101,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\altisTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\altisZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\altisZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\altisTriggerSettings.sqf";
@@ -114,8 +114,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\tanoaTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\tanoaZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\tanoaZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\tanoaTriggerSettings.sqf";
@@ -127,8 +127,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\namalskTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\namalskZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\namalskZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\namalskTriggerSettings.sqf";
@@ -140,8 +140,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerSettings.sqf";
@@ -153,8 +153,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusIslesTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerSettings.sqf";
@@ -166,8 +166,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerSettings.sqf";
@@ -179,8 +179,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernarusZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernarusTriggerSettings.sqf";
@@ -192,8 +192,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\napfTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\napfZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\napfZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\napfTriggerSettings.sqf";
@@ -205,8 +205,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\alRayakTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\alRayakZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\alRayakZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\alRayakTriggerSettings.sqf";
@@ -218,8 +218,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\essekerTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\essekerZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\essekerZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\essekerTriggerSettings.sqf";
@@ -231,8 +231,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\bornholmTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\bornholmZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\bornholmZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\bornholmTriggerSettings.sqf";
@@ -244,8 +244,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\tavianaTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\tavianaZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\tavianaZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\tavianaTriggerSettings.sqf";
@@ -257,8 +257,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\taunusTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\taunusZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\taunusZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\taunusTriggerSettings.sqf";
@@ -270,8 +270,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernobylZoneTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernobylZoneZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernobylZoneZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernobylZoneTriggerSettings.sqf";
@@ -283,8 +283,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernobylZoneTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernobylZoneZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\chernobylZoneZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernobylZoneTriggerSettings.sqf";
@@ -296,8 +296,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\stratisTriggerPosition.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\stratisZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\stratisZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\stratisTriggerSettings.sqf";
@@ -309,8 +309,8 @@ switch (toLower worldName) do
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\maldenTriggerPositions.sqf";
 
 		//Loot Crate and Mission Objects
-		triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\maldenZedMission.sqf";
-		triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+		EZM_triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\maldenZedMission.sqf";
+		EZM_triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
 
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\maldenTriggerSettings.sqf";

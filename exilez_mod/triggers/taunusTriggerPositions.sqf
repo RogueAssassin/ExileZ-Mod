@@ -1,5 +1,5 @@
 //Radiation Zones (Around north east and sound west airports)
-NoMansLand = 
+EZM_NoMansLand = 
 [        
 [5741.55,1975.02,1000],    //Rhein-Main Airport
 [6695.4,2586.88,500],    //Rhein-Main Airport North East Point //Separate from above as I have custom military implemented here
@@ -7,13 +7,13 @@ NoMansLand =
 ];  
 
 //Mission Trigger if I ever want to use it
-Mission = 
+EZM_Mission = 
 [
 
 ];
 
 //Large Sized Cities
-MainCitiesOnly = 
+EZM_MainCitiesOnly = 
 [
 [7836.55,5879.02,700],    //Konigstein
 [6563.68,5247.63,500],    //Schneidhain
@@ -24,7 +24,7 @@ MainCitiesOnly =
 ];
 
 //Military
-Military = 
+EZM_Military = 
 [         
 [20002.8,3438.09,500], //Kaserne
 [9855.39,12712.4,500], //Kolbenberg
@@ -39,7 +39,7 @@ Military =
 ];    
 
 //Medium Sized Cities
-Cities = 
+EZM_Cities = 
 [
 [4866.68,3858.65,500], //Fischbach
 [12741.1,2609.83,500], //Schwalbach
@@ -58,7 +58,7 @@ Cities =
 ];
 
 //Small Sized Cities / Towns / Villages
-NoBuildings = 
+EZM_NoBuildings = 
 [         
 [9349.5,3516.67,500], //Neuenhain
 [4636.73,4863.77,500], //Rettershof

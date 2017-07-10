@@ -4,13 +4,13 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 */
 
-Cities	=
+EZM_Cities	=
 [
 [2000,2700,250],
 [3000,6000,500]
 ];
 
-Military	=
+EZM_Military	=
 [
 [1900,5500,650],
 [4400,4100,500],

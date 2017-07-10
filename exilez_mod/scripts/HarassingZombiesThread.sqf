@@ -118,7 +118,18 @@ if (time < 120) exitWith
 				{
 					for "_i" from 1 to (_groupSize - _count) do 
 					{
-						nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+						// Max Zombies reached?
+						if ((count EZM_aliveZombies) <= MaxZombies) then
+						{
+							nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+						}
+						else
+						{
+							if (ExtendedLogging) then
+							{
+								diag_log "ExileZ Mod: Maximum Zombies reached for now!";
+							};
+						};
 						sleep 1;
 					};
 					

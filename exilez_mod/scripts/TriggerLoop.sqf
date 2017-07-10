@@ -49,7 +49,19 @@ SpawnOne = {
 	{
 		_playerObj = _triggerList call BIS_fnc_selectRandom;
 		_playerPos = getPos _playerObj;
-		nul = [_group,_playerPos,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+		
+		// Max Zombies reached?
+		if ((count EZM_aliveZombies) <= MaxZombies) then
+		{
+			nul = [_group,_playerPos,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
+		}
+		else
+		{
+			if (ExtendedLogging) then
+			{
+				diag_log "ExileZ Mod: Maximum Zombies reached for now!";
+			};
+		};
 	};
 };
 

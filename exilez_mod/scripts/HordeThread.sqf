@@ -78,7 +78,18 @@ if (_nPlayer >= 1) then
 		};
 		for "_i" from 1 to _groupSize do 
 		{
-			nul = [_group,_position,_vestGroup,_lootGroup,_zombieGroup,_hordeDensity] spawn SpawnZombie;
+			// Max Zombies reached?
+			if ((count EZM_aliveZombies) <= MaxZombies) then
+			{
+				nul = [_group,_position,_vestGroup,_lootGroup,_zombieGroup,_hordeDensity] spawn SpawnZombie;
+			}
+			else
+			{
+				if (ExtendedLogging) then
+				{
+					diag_log "ExileZ Mod: Maximum Zombies reached for now!";
+				};
+			};
 			sleep 1;
 		};
 	}

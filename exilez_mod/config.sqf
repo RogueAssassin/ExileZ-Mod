@@ -9,6 +9,7 @@ Debug							= false;			// debug messages.
 ExtendedLogging					= true;				// Slightly more information in logs.
 
 // Global Settings
+MaxZombies						= 100;				// How many Zombies overall?
 ZombieSide						= EAST;             // zombie team side east, west and Civilian can be used.
 MinSpawnDistance				= 20;               // Closest distance from any player to spawn a zombie.
 MaxSpawnDistance				= 100;              // Max distance a zombie should spawn from a player.

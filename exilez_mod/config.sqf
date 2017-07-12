@@ -132,25 +132,27 @@ EZM_HarassingConfig = [
 EZM_UseHorde								= true;		// Use the horde spawner  
 EZM_HordeLoopTime							= 30;		// Spawn a Horde every X Minutes. (Default 30 mins)
 EZM_HordeConfig = [
-/* 0 Groups Size  */         15,					// maximum number of zombies around a player
+/* 0 Groups Size  */         15,						// maximum number of zombies around a player
 /* 1 Vest group */           EZM_Basic,					// Vest function defined in ZVest.sqf
 /* 2 Loot group */           EZM_DocAndAmmo,			// Loot function defined in ZLoot.sqf
 /* 3 Zombie group */         EZM_MediumMix,				// Group function defined in ZClasses.sqf
-/* 4 Horde density */        25						// Radius in which the zombies will spawn should be lower than Min Spawn Distance.
+/* 4 Horde density */        25							// Radius in which the zombies will spawn should be lower than Min Spawn Distance.
 ];
 
-// Blacklisted Areas
-EZM_UseAreaBlackList = false;
-EZM_BlackListedPositions =
+// Blacklisted Areas Config
+EZM_UseAreaBlackList						= true;
+EZM_BlackListedPositions =								// Manual blacklisted areas
 [
-	//[[CoordinatesX,CoordinatesY],Radius] // Example
-	[[14599,16797],175],
-	[[23334,24188],175],
-	[[2998,18175],175]
+	//[[CoordinatesX,CoordinatesY],Radius]				// Example
+	//[[14599,16797],175],
+	//[[23334,24188],175],
+	//[[2998,18175],175]
 ];
+EZM_BlacklistExtendTraders					= true;		// Extend the Traders Blacklist area
+EZM_BlacklistDistance						= 200;		// Extend the Traders Blacklist area by this much
 
 // Use Map Triggers as well as Hordes and Harassing Zombies?
-EZM_UseTriggers                  = true;
+EZM_UseTriggers								= true;
 
 // Check Config Compiled
-EZM_CompiledOkay				= true;
+EZM_CompiledOkay							= true;

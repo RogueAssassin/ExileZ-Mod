@@ -418,9 +418,31 @@ if (EZM_UseTriggers) then
 	}foreach EZM_Triggers;
 };
 
+// Kill those lights
 if (EZM_LightsOff) then
 {
 	 [] call EZM_TurnTheLightsOff;
+};
+
+// Add and extend traders to blacklisted areas
+if ((EZM_UseAreaBlackList) && (EZM_BlacklistExtendTraders)) then
+{
+	EZM_BlackListedPositions = [];
+	EZM_BlacklistedTraders = [];
+	{
+		if ((getMarkerType _x) isEqualTo "ExileTraderZone") then
+		{
+			EZM_BlacklistedTraders pushBack
+			[
+				getMarkerPos _x, 
+				((getMarkerSize _x) select 0) + EZM_BlacklistDistance
+			];
+		};
+	}
+	forEach allMapMarkers;
+
+	// Add the new blacklist to the old
+	EZM_BlacklistedPositions append EZM_BlacklistedTraders;
 };
 
 sleep 1;

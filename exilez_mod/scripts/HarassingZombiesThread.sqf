@@ -27,21 +27,25 @@ if (time < 120) exitWith
 		diag_log format["ExileZ Mod: HarassingZombiesLoop: GroupSize : %1 | Vest : %2 | Loot : %3 | ZGroup : %4",_groupSize,_vestGroup,_lootGroup,_zombieGroup];
 	};
 	
+	// Setup player object and name
+	_playerObj = _x;
+	_playerName = name _playerObj;
+	
+	// Get player position
+	_playerPosition = getPos _playerObj;
+	
 	// Setup skipping the player
 	_skipPlayer = false;
 	
 	// Not in Blacklisted Areas
 	if (EZM_UseAreaBlackList) then
 	{
-		_playerPos = getPos _x;
 		{
-			if (_playerPos distance (_x select 0) <= _x select 1) then
+			if (_playerPosition distance (_x select 0) <= _x select 1) then
 			{
 				_skipPlayer = true;
 				if (EZM_ExtendedLogging) then 
 				{
-					_playerObj = _x;
-					_playerName = name _playerObj;
 					diag_log format["ExileZ Mod: %1 is in a Blacklisted area, no Harassing Zombie for them.",_playerName];
 				};
 			};
@@ -51,26 +55,22 @@ if (time < 120) exitWith
 	};
 	
 	// Not in Traders
-	if ((EZM_RemoveZfromTraders) && ((getPosATL _x) call ExileClient_util_world_isInTraderZone)) then
+	if ((EZM_RemoveZfromTraders) && ((getPosATL _playerObj) call ExileClient_util_world_isInTraderZone)) then
 	{
 		_skipPlayer = true;
 		if (EZM_ExtendedLogging) then 
 		{
-			_playerObj = _x;
-			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in a SafeZone, no Harassing Zombie for them.",_playerName];
 		};
 		sleep 0.5;
 	};
 	
 	// Not in Territory
-	if ((EZM_RemoveZfromTerritory) && ((getPosATL _x) call ExileClient_util_world_isInTerritory)) then
+	if ((EZM_RemoveZfromTerritory) && ((getPosATL _playerObj) call ExileClient_util_world_isInTerritory)) then
 	{
 		_skipPlayer = true;
 		if (EZM_ExtendedLogging) then 
 		{
-			_playerObj = _x;
-			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 is in their Territory, no Harassing Zombie for them.",_playerName];
 		};
 		sleep 0.5;
@@ -83,8 +83,6 @@ if (time < 120) exitWith
 		_skipPlayer = true;
 		if (EZM_ExtendedLogging) then 
 		{
-			_playerObj = _x;
-			_playerName = name _playerObj;
 			diag_log format["ExileZ Mod: %1 got lucky, no Harassing Zombie for them.",_playerName];
 		};
 		sleep 0.5;
@@ -92,14 +90,10 @@ if (time < 120) exitWith
 
 	if ((EZM_HarassingZombieAtNightOnly && (daytime >= EZM_NightStartTime or daytime < EZM_NightEndTime) && !(_skipPlayer)) || (!(EZM_HarassingZombieAtNightOnly) && !(_skipPlayer))) then 
 	{
-		if (isPlayer _x) then 
-		{ 
-			if (alive _x) then 
-			{	
-				_playerObj = _x;
-				_playerName = name _playerObj;
-				_playerPosition = getPos _playerObj;
-				
+		if (isPlayer _playerObj) then 
+		{
+			if (alive _playerObj) then 
+			{
 				// Get group from player
 				_group = _playerObj getvariable ["group", objNull];
 				
@@ -111,12 +105,12 @@ if (time < 120) exitWith
 				};
 
 				// Count number of zombie alive in the group
-				_count = {alive _x} count units _group; 	
+				_count = {alive _playerObj} count units _group; 	
 				
 				// Fill the group
-				if (_count < _groupSize) then 
+				if (_count < _groupSize) then
 				{
-					for "_i" from 1 to (_groupSize - _count) do 
+					for "_i" from 1 to (_groupSize - _count) do
 					{
 						// Max Zombies reached?
 						if ((count EZM_aliveZombies) <= EZM_MaxZombies) then

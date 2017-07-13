@@ -140,13 +140,13 @@ EZM_HordeConfig = [
 ];
 
 // Blacklisted Areas Config
-EZM_UseAreaBlackList						= true;
-EZM_BlackListedPositions =								// Manual blacklisted areas
+EZM_UseAreaBlacklist						= true;
+EZM_BlacklistedPositions =								// Manual blacklisted areas
 [
 	//[[CoordinatesX,CoordinatesY],Radius]				// Example
 	//[[14599,16797],175],
 	//[[23334,24188],175],
-	//[[2998,18175],175]
+	[[2998,18175],175]
 ];
 EZM_BlacklistExtendTraders					= true;		// Extend the Traders Blacklist area
 EZM_BlacklistDistance						= 200;		// Extend the Traders Blacklist area by this much

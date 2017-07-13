@@ -38,7 +38,7 @@ if (time < 120) exitWith
 	_skipPlayer = false;
 	
 	// Not in Blacklisted Areas
-	if (EZM_UseAreaBlackList) then
+	if (EZM_UseAreaBlacklist) then
 	{
 		{
 			if (_playerPosition distance (_x select 0) <= _x select 1) then
@@ -50,8 +50,8 @@ if (time < 120) exitWith
 				};
 			};
 		}
-		forEach EZM_BlackListedPositions;	
-		sleep 0.5;	
+		forEach EZM_BlacklistedPositions;	
+		sleep 0.5;
 	};
 	
 	// Not in Traders

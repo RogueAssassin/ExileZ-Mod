@@ -425,10 +425,8 @@ if (EZM_LightsOff) then
 };
 
 // Add and extend traders to blacklisted areas
-if ((EZM_UseAreaBlackList) && (EZM_BlacklistExtendTraders)) then
+if ((EZM_UseAreaBlacklist) && (EZM_BlacklistExtendTraders)) then
 {
-	EZM_BlackListedPositions = [];
-	EZM_BlacklistedTraders = [];
 	{
 		if ((getMarkerType _x) isEqualTo "ExileTraderZone") then
 		{
@@ -445,7 +443,6 @@ if ((EZM_UseAreaBlackList) && (EZM_BlacklistExtendTraders)) then
 	EZM_BlacklistedPositions append EZM_BlacklistedTraders;
 };
 
-sleep 1;
 diag_log "---------------------------------------------------------------------";
 diag_log "---------------------------------------------------------------------";
 diag_log format["ExileZ Mod: Version %1 Started at (%2)", exileZmod_version, time];

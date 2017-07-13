@@ -78,6 +78,10 @@ publicVariable "EZM_aliveZombies";
 EZM_deadZombies = [];
 publicVariable "EZM_deadZombies";
 
+// Create Blacklist Arrays
+EZM_BlacklistedPositions = [];
+EZM_BlacklistedTraders = [];
+
 // Compile World Trigger Positions
 switch (toLower worldName) do
 {

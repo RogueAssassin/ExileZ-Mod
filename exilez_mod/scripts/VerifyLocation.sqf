@@ -39,7 +39,7 @@ if (_validLocation) then
 // Check for Blacklisted Areas
 if (_validLocation) then 
 {
-	if (EZM_UseAreaBlackList) then
+	if (EZM_UseAreaBlacklist) then
 	{
 		{
 			if (_position distance (_x select 0) <= _x select 1) then
@@ -47,7 +47,7 @@ if (_validLocation) then
 				_validLocation = false
 			};
 		}
-		forEach EZM_BlackListedPositions;
+		forEach EZM_BlacklistedPositions;
 	};
 };
 

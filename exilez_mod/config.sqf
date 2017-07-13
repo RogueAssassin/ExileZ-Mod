@@ -149,7 +149,7 @@ EZM_BlacklistedPositions =								// Manual blacklisted areas
 	[[2998,18175],175]
 ];
 EZM_BlacklistExtendTraders					= true;		// Extend the Traders Blacklist area
-EZM_BlacklistDistance						= 200;		// Extend the Traders Blacklist area by this much
+EZM_BlacklistExtendDistance						= 200;		// Extend the Traders Blacklist area by this much
 
 // Use Map Triggers as well as Hordes and Harassing Zombies?
 EZM_UseTriggers								= true;

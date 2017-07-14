@@ -82,6 +82,14 @@ addOns[]=
 	"ryanzombiesfunctions" // Make sure the last entry does not have a comma after it!!
 };
 
+## Optional Steps for Database additions
+
+1: Run the SQL file on your database.
+
+2: Add the contents of exile.ini (for your version of extDB3) to the existing exile.ini in the player related queries section.
+
+3: Enable "EZM_EnableZombieStatKill" in the config.
+
 ## Configuration
 
 The script is configured to run with Altis, Tanoa, Namalsk, Malden, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, Taviana, and Taunus, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.

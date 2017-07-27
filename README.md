@@ -20,6 +20,8 @@ Supports ANY map (and includes a number of map specific configs)
 
 Highly configurable Zombie options
 
+Blacklist areas from Zombies spawning
+
 Supports Infections (See here for required additional files: http://steamcommunity.com/sharedfiles/filedetails/?id=614815221)
 
 ## Requirements
@@ -43,8 +45,6 @@ Added support for ANY map
 Integrated Zombie Monitor for better performance
 
 Optimised Harassing and Horde loops
-
-Blacklist areas from Zombies spawning
 
 ## Upcoming Changes
 

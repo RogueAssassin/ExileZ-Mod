@@ -301,40 +301,24 @@ EZM_HordeThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\Hor
 if (EZM_Debug) then
 {
 	[EZM_MaxTime/2, EZM_ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Debug Zombie Monitor to ExileServer Thread";
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 }
 else
 {
 	[EZM_MaxTime, EZM_ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Zombie Monitor to ExileServer Thread";
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 };
 
 // Add Dead Zombie Monitor to ExileServer Thread
 if (EZM_Debug) then
 {
 	[EZM_MaxTimeDead/4, EZM_DeadZombieMonitor, [], true] call ExileServer_system_thread_addTask;
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Debug Dead Zombie Monitor to ExileServer Thread";
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 }
 else
 {
 	[EZM_MaxTimeDead, EZM_DeadZombieMonitor, [], true] call ExileServer_system_thread_addTask;
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 	diag_log "ExileZ Mod: Added Dead Zombie Monitor to ExileServer Thread";
-	diag_log "---------------------------------------------------------------------";
-	diag_log "---------------------------------------------------------------------";
 };
 
 // Add Harassing Zombies Loop to ExileServer Thread
@@ -343,20 +327,12 @@ if (EZM_UseHarassingZombies) then
 	if (EZM_Debug) then
 	{
 		[EZM_HarassingLoopTime/2, EZM_HarassingZombiesThread, [EZM_HarassingConfig], true] call ExileServer_system_thread_addTask;
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Debug Harassing Zombies Loop to ExileServer Thread";
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 	}
 	else
 	{
 		[EZM_HarassingLoopTime, EZM_HarassingZombiesThread, [EZM_HarassingConfig], true] call ExileServer_system_thread_addTask;
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Harassing Zombies Loop to ExileServer Thread";
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 	};
 };
 
@@ -366,20 +342,12 @@ if (EZM_UseHorde) then
 	if (EZM_Debug) then
 	{
 		[EZM_HordeLoopTime*15, EZM_HordeThread, [EZM_HordeConfig], true] call ExileServer_system_thread_addTask;
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Debug Horde Loop to ExileServer Thread";
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 	}
 	else
 	{
 		[EZM_HordeLoopTime*60, EZM_HordeThread, [EZM_HordeConfig], true] call ExileServer_system_thread_addTask;
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 		diag_log "ExileZ Mod: Added Horde Loop to ExileServer Thread";
-		diag_log "---------------------------------------------------------------------";
-		diag_log "---------------------------------------------------------------------";
 	};
 };
 
@@ -407,7 +375,8 @@ if (EZM_UseTriggers) then
 					diag_log format["ExileZ Mod: Zombie Type Index : %1		Weight : %2		Compound Weight Value : 	%3",_forEachIndex,_x select 1,_count];
 				};
 				(_zgroup select _forEachIndex) set [1,_count];
-			}foreach (_zgroup);
+			}
+			foreach (_zgroup);
 
 			//Create triggers
 			{
@@ -443,8 +412,4 @@ if ((EZM_UseAreaBlacklist) && (EZM_BlacklistExtendTraders)) then
 	EZM_BlacklistedPositions append EZM_BlacklistedTraders;
 };
 
-diag_log "---------------------------------------------------------------------";
-diag_log "---------------------------------------------------------------------";
 diag_log format["ExileZ Mod: Version %1 Started at (%2)", exileZmod_version, time];
-diag_log "---------------------------------------------------------------------";
-diag_log "---------------------------------------------------------------------";

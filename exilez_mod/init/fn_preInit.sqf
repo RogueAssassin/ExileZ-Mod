@@ -301,14 +301,14 @@ switch (toLower worldName) do
 // Check Triggers Compiled Correctly
 if (isNil "EZM_TriggersCompiledOkay") exitWith
 {
-	diag_log format["ExileZ Mod: Failed to read exilez_mod\triggers\(worldNameHere)TriggerPosition.sqf, check for typos (time: %1)", time];
+	diag_log format["ExileZ Mod: Failed to read exilez_mod\triggers\%1TriggerPosition.sqf, check for typos (time: %2)", worldName, time];
 };
 
 // Check Trigger Settings Compiled Correctly
 if (isNil "EZM_SettingsCompiledOkay") exitWith
 {
-	diag_log format["ExileZ Mod: Failed to read exilez_mod\triggers\(worldNameHere)TriggerSettings.sqf, check for typos (time: %1)", time];
+	diag_log format["ExileZ Mod: Failed to read exilez_mod\triggers\%1TriggerSettings.sqf, check for typos (time: %2)", worldName, time];
 };
 
 // Log more stuff
-diag_log format["ExileZ Mod: Version %1 | Loaded all Configs at %2", exileZmod_version, time];
+diag_log format["ExileZ Mod: Version %1 | Loaded all Configs at %3 For World: %2", exileZmod_version, worldName,time];
